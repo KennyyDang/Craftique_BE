@@ -1,0 +1,6 @@
+@CraftiqueBE.API_HostAddress = http://localhost:5027
+
+GET {{CraftiqueBE.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
