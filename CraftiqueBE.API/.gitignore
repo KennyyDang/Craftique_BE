@@ -1,0 +1,27 @@
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+*.cache
+
+# Ignore build output
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.log
+*.cache
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.props
+*.targets
+
+# Ignore others
+*.backup.json
+*.DS_Store
+*.vscode/
