@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftiqueBE.API", "CraftiqueBE.API\CraftiqueBE.API.csproj", "{944AB463-F43A-4B8A-8AD3-3145CAFC8229}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftiqueBE.Data", "CraftiqueBE.Data\CraftiqueBE.Data.csproj", "{A63089CC-6305-41F4-8CD4-F92CA7B921C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftiqueBE.Service", "CraftiqueBE.Service\CraftiqueBE.Service.csproj", "{BB94499F-533D-48A1-9A0C-3A93D2BDA6D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A63089CC-6305-41F4-8CD4-F92CA7B921C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A63089CC-6305-41F4-8CD4-F92CA7B921C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A63089CC-6305-41F4-8CD4-F92CA7B921C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB94499F-533D-48A1-9A0C-3A93D2BDA6D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB94499F-533D-48A1-9A0C-3A93D2BDA6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB94499F-533D-48A1-9A0C-3A93D2BDA6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB94499F-533D-48A1-9A0C-3A93D2BDA6D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

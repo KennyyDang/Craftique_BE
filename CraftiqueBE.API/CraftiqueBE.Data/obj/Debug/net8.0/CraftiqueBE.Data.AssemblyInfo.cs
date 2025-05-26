@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CraftiqueBE.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dedfd3dc408b15905f910113d3b97c12e53c2586")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69aaa952b676f730403f9b2cdce8a95c342cbdd6")]
 [assembly: System.Reflection.AssemblyProductAttribute("CraftiqueBE.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CraftiqueBE.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
