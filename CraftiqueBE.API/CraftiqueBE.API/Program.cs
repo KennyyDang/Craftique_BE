@@ -1,12 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using CraftiqueBE.Data.Data;
+using CraftiqueBE.Data.Entities;
+using CraftiqueBE.Data;
 
 
 namespace CraftiqueBE.API
 {
 	public class Program
 	{
-		public static void Main(string[] args)
+		public static async Task Main(string[] args) // Changed return type to Task and added async modifier
 		{
 			// Tạo builder cho ứng dụng
 			var builder = WebApplication.CreateBuilder(args);
@@ -27,7 +30,6 @@ namespace CraftiqueBE.API
 				.AddEntityFrameworkStores<CraftiqueBE.Data.CraftiqueDBContext>()
 				.AddDefaultTokenProviders();
 
-
 			var app = builder.Build();
 
 			if (app.Environment.IsDevelopment())
@@ -39,6 +41,16 @@ namespace CraftiqueBE.API
 			app.UseHttpsRedirection();
 			app.UseAuthorization();
 			app.MapControllers();
+
+			using (var scope = app.Services.CreateScope())
+			{
+				var services = scope.ServiceProvider;
+				var context = services.GetRequiredService<CraftiqueDBContext>();
+				var userManager = services.GetRequiredService<UserManager<User>>();
+				var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+				await DbInitializer.Initialize(context, userManager, roleManager); // No changes needed here
+			}
 
 			app.Run();
 		}
