@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using CraftiqueBE.Data.Data;
 using CraftiqueBE.Data.Entities;
 using CraftiqueBE.Data;
+using CraftiqueBE.Data.Mapping;
 
 
 namespace CraftiqueBE.API
@@ -29,6 +30,7 @@ namespace CraftiqueBE.API
 			builder.Services.AddIdentity<CraftiqueBE.Data.Entities.User, IdentityRole>()
 				.AddEntityFrameworkStores<CraftiqueBE.Data.CraftiqueDBContext>()
 				.AddDefaultTokenProviders();
+			builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 			var app = builder.Build();
 
