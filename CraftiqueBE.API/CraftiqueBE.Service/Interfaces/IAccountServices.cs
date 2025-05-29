@@ -15,7 +15,7 @@ namespace CraftiqueBE.Service.Interfaces
 	{
 		Task<string> CreateAccessToken(User user);
 		Task<string> CreateRefreshToken(User user);
-		//Task<JwtViewModel> GoogleLoginAsync(GoogleAuthModel model);
+		Task<JwtViewModel> GoogleLoginAsync(GoogleAuthModel model);
 		Task<JwtViewModel> LoginAsync(LoginModel model);
 		Task<IdentityResult> RegisterAsync(User user);
 		Task<JwtViewModel> ValidateRefreshToken(RefreshTokenModel model);
