@@ -12,10 +12,8 @@ namespace CraftiqueBE.Data.Data
 	public static class DbInitializer
 	{
 		public static async Task Initialize(CraftiqueDBContext context, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
-		{
-			// Tạo các vai trò (Admin, Staff, Customer, Shipper)
-			if (!context.Roles.Any())
 			{
+				// 1. Tạo role nếu chưa có
 				var roles = new List<string> { "Admin", "Staff", "Customer", "Shipper" };
 				foreach (var role in roles)
 				{
@@ -24,33 +22,47 @@ namespace CraftiqueBE.Data.Data
 						await roleManager.CreateAsync(new IdentityRole(role));
 					}
 				}
-				await context.SaveChangesAsync();
-			}
-			;
 
-			if (!context.Users.Any())
-			{
-				// Thêm người dùng
-				var users = new List<(string username, string email, string name, string role)>
+				// 2. Tạo user mẫu
+				if (!context.Users.Any())
 				{
-					("admin", "admin@example.com", "Administrator", RolesHelper.Admin),
-					("staff", "staff@example.com", "Store Staff", RolesHelper.Staff),
-					("Kien", "kien@example.com", "Store Shipper", RolesHelper.Shipper),
-					("Tai", "tai@example.com", "Store Shipper", RolesHelper.Shipper),
-					("customer", "user@example.com", "Regular Customer", RolesHelper.Customer)
-				};
-
-				foreach (var (username, email, name, role) in users)
-				{
-					if (await userManager.FindByEmailAsync(email) == null)
+					var users = new List<(string username, string email, string name, string role)>
 					{
-						var user = new User { UserName = username, Email = email, Name = name, EmailConfirmed = true };
-						await userManager.CreateAsync(user, "123");
-						await userManager.AddToRoleAsync(user, role);
+						("admin", "admin@example.com", "Administrator", RolesHelper.Admin),
+						("staff", "staff@example.com", "Store Staff", RolesHelper.Staff),
+						("kien", "kien@example.com", "Store Shipper", RolesHelper.Shipper),
+						("tai", "tai@example.com", "Store Shipper", RolesHelper.Shipper),
+						("customer", "user@example.com", "Regular Customer", RolesHelper.Customer)
+					};
+
+					foreach (var (username, email, name, role) in users)
+					{
+						if (await userManager.FindByEmailAsync(email) == null)
+						{
+							var user = new User
+							{
+								UserName = username,
+								Email = email,
+								Name = name,
+								EmailConfirmed = true
+							};
+
+							// Bạn nên dùng mật khẩu đủ mạnh nếu chưa config bỏ
+							var result = await userManager.CreateAsync(user, "123");
+
+							if (result.Succeeded)
+							{
+								await userManager.AddToRoleAsync(user, role);
+							}
+							else
+							{
+								// In lỗi ra console để dễ debug nếu seed thất bại
+								Console.WriteLine($"❌ Failed to create user {username}: {string.Join(", ", result.Errors.Select(e => e.Description))}");
+							}
+						}
 					}
 				}
-				await context.SaveChangesAsync();
 			}
-		}
+
 	}
 }

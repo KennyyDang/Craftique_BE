@@ -4,6 +4,13 @@ using CraftiqueBE.Data.Data;
 using CraftiqueBE.Data.Entities;
 using CraftiqueBE.Data;
 using CraftiqueBE.Data.Mapping;
+using CraftiqueBE.Service;
+using CraftiqueBE.API.MiddleWares;
+using CraftiqueBE.API.CustomTokenProviders;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.Google;
+using System.Text;
 
 
 namespace CraftiqueBE.API
@@ -27,9 +34,80 @@ namespace CraftiqueBE.API
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
 			// Đăng ký Identity (User & Role)
-			builder.Services.AddIdentity<CraftiqueBE.Data.Entities.User, IdentityRole>()
-				.AddEntityFrameworkStores<CraftiqueBE.Data.CraftiqueDBContext>()
-				.AddDefaultTokenProviders();
+			builder.Services.AddIdentity<User, IdentityRole>(options =>
+			{
+				options.Password.RequiredLength = 1;
+				options.Password.RequireUppercase = false;
+				options.Password.RequireLowercase = false;
+				options.Password.RequireDigit = false;
+				options.Password.RequireNonAlphanumeric = false;
+
+				options.User.RequireUniqueEmail = true;
+
+				options.Tokens.EmailConfirmationTokenProvider = "emailconfirmation";
+			})
+				.AddEntityFrameworkStores<CraftiqueDBContext>()
+				.AddDefaultTokenProviders()
+				.AddTokenProvider<DataProtectorTokenProvider<User>>("REFRESHTOKENPROVIDER")
+				.AddTokenProvider<EmailConfirmationTokenProvider<User>>("emailconfirmation");
+
+
+			builder.Services.Configure<DataProtectionTokenProviderOptions>(opt =>
+				opt.TokenLifespan = TimeSpan.FromHours(2));
+			builder.Services.Configure<EmailConfirmationTokenProviderOptions>(opt =>
+				opt.TokenLifespan = TimeSpan.FromDays(3));
+			//add jwt
+			builder.Services
+				.AddAuthentication(options =>
+				{
+					options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+					options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+					options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+				})
+				.AddJwtBearer(x =>
+				{
+					x.SaveToken = true;
+					x.TokenValidationParameters = new TokenValidationParameters
+					{
+						ValidateIssuer = false,
+						ValidateAudience = false,
+						ValidateLifetime = true,
+						ValidIssuer = builder.Configuration["JWT:Issuer"],
+						ValidAudience = builder.Configuration["JWT:Audience"],
+						IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecretKey"]))
+					};
+
+					// Add SignalR specific JWT configuration
+					x.Events = new JwtBearerEvents
+					{
+						OnMessageReceived = context =>
+						{
+							var accessToken = context.Request.Query["access_token"];
+							var path = context.HttpContext.Request.Path;
+
+							if (!string.IsNullOrEmpty(accessToken) &&
+								(path.StartsWithSegments("/chatHub") || path.StartsWithSegments("/notificationHub")))
+							{
+								context.Token = accessToken;
+							}
+							return Task.CompletedTask;
+						}
+					};
+				});
+				// Thêm Google Authentication nếu muốn sử dụng OAuth chuẩn của ASP.NET
+				//.AddGoogle(options =>
+				//{
+				//	options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+				//	options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+				//});
+
+				builder.Services.AddAuthorization();
+
+
+
+			builder.Services
+				.AddRepository(builder.Configuration)
+				.AddServices();
 			builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 			var app = builder.Build();
@@ -39,8 +117,13 @@ namespace CraftiqueBE.API
 				app.UseSwagger();
 				app.UseSwaggerUI();
 			}
+			else
+			{
+				app.UseHttpsRedirection();
+			}
 
-			app.UseHttpsRedirection();
+			app.UseMiddleware<ExceptionHandlingMiddleware>();
+			app.UseAuthentication(); // Đặt UseAuthentication trước UseAuthorization
 			app.UseAuthorization();
 			app.MapControllers();
 
@@ -51,7 +134,7 @@ namespace CraftiqueBE.API
 				var userManager = services.GetRequiredService<UserManager<User>>();
 				var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-				await DbInitializer.Initialize(context, userManager, roleManager); // No changes needed here
+				await DbInitializer.Initialize(context, userManager, roleManager); 
 			}
 
 			app.Run();

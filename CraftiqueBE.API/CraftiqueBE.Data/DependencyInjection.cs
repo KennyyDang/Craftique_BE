@@ -1,4 +1,5 @@
 ﻿using CraftiqueBE.Data.Entities;
+using CraftiqueBE.Data.Helper.EmailHelper;
 using CraftiqueBE.Data.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,8 +20,8 @@ namespace CraftiqueBE.Data
 			service.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 			service.AddScoped<IRepository<User>, Repository<User>>();
 
-			//service.Configure<EmailConfiguration>(configuration.GetSection("MailSettings"));
-			//service.AddScoped<IEmailHelper, EmailHelper>();
+			service.Configure<EmailConfiguration>(configuration.GetSection("MailSettings"));
+			service.AddScoped<IEmailHelper, EmailHelper>();
 			return service;
 		}
 	}
