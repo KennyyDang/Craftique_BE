@@ -30,6 +30,9 @@ namespace CraftiqueBE.API
 			builder.Services.AddIdentity<CraftiqueBE.Data.Entities.User, IdentityRole>()
 				.AddEntityFrameworkStores<CraftiqueBE.Data.CraftiqueDBContext>()
 				.AddDefaultTokenProviders();
+			builder.Services
+				.AddRepository(builder.Configuration);
+				//.AddServices();
 			builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 			var app = builder.Build();
@@ -51,7 +54,7 @@ namespace CraftiqueBE.API
 				var userManager = services.GetRequiredService<UserManager<User>>();
 				var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-				await DbInitializer.Initialize(context, userManager, roleManager); // No changes needed here
+				await DbInitializer.Initialize(context, userManager, roleManager); 
 			}
 
 			app.Run();
