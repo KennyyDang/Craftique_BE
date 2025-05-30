@@ -22,6 +22,17 @@ namespace CraftiqueBE.Service
 			service.AddScoped<IUserServices, UserServices>();
 			service.AddScoped<IAdminServices, AdminServices>();
 			service.AddScoped<IOrderServices, OrderServices>();
+			service.AddScoped<IAttributeServices, AttributeServices>();
+			service.AddScoped<IProductItemServices, ProductItemServices>();
+			service.AddScoped<IProductItemAttributeServices, ProductItemAttributeServices>();
+			service.AddScoped<IProductImgServices, ProductImgServices>();
+			service.AddScoped<IBlogServices, BlogServices>();
+			service.AddScoped<ICategoryServices, CategoryServices>();
+			service.AddScoped<IReviewServices, ReviewServices>();
+			service.AddScoped<INotificationServices, NotificationServices>();
+			service.AddScoped<IChatServices, ChatServices>();
+			service.AddScoped<ICategoryServices, CategoryServices>();
+
 			return service;
 
 		}

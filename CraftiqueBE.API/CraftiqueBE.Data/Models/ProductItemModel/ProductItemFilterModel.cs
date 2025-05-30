@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CraftiqueBE.Data.Models.ProductItemModel
 {
+
 	public class ProductItemFilterModel
 	{
 		public string? SearchTerm { get; set; }
