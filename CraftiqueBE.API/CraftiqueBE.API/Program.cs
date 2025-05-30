@@ -142,15 +142,15 @@ namespace CraftiqueBE.API
 							return Task.CompletedTask;
 						}
 					};
-				});
-				// Thêm Google Authentication nếu muốn sử dụng OAuth chuẩn của ASP.NET
-				//.AddGoogle(options =>
-				//{
-				//	options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-				//	options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-				//});
+				})
+			//Thêm Google Authentication nếu muốn sử dụng OAuth chuẩn của ASP.NET
+		   .AddGoogle(options =>
+		   {
+			   options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+			   options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+		   });
 
-				builder.Services.AddAuthorization();
+			builder.Services.AddAuthorization();
 
 
 
