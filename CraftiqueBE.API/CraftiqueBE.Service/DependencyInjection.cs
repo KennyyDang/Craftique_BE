@@ -20,7 +20,8 @@ namespace CraftiqueBE.Service
 			// Existing service registrations
 			service.AddScoped<IAccountServices, AccountServices>();
 			service.AddScoped<IUserServices, UserServices>();
-
+			service.AddScoped<IAdminServices, AdminServices>();
+			service.AddScoped<IOrderServices, OrderServices>();
 			return service;
 
 		}

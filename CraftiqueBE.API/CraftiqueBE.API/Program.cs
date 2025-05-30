@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.Google;
 using System.Text;
+using Microsoft.OpenApi.Models;
 
 
 namespace CraftiqueBE.API
@@ -21,6 +22,42 @@ namespace CraftiqueBE.API
 		{
 			// Tạo builder cho ứng dụng
 			var builder = WebApplication.CreateBuilder(args);
+
+			// Add services to the container.
+
+			builder.Services.AddSignalR(options =>
+			{
+				options.EnableDetailedErrors = true;
+			});
+
+			// Swagger Configuration
+			builder.Services.AddSwaggerGen(option =>
+			{
+				option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+				option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+				{
+					In = ParameterLocation.Header,
+					Description = "Please enter a valid token",
+					Name = "Authorization",
+					Type = SecuritySchemeType.Http,
+					BearerFormat = "JWT",
+					Scheme = "Bearer"
+				});
+				option.AddSecurityRequirement(new OpenApiSecurityRequirement
+				 {
+					 {
+						 new OpenApiSecurityScheme
+						 {
+							 Reference = new OpenApiReference
+							 {
+								 Type = ReferenceType.SecurityScheme,
+								 Id = "Bearer"
+							 }
+						 },
+						 new string[]{}
+					 }
+				 });
+			});
 
 			// Đăng ký DbContext và chỉ định Migrations Assembly
 			builder.Services.AddDbContext<CraftiqueBE.Data.CraftiqueDBContext>(options =>
@@ -33,6 +70,18 @@ namespace CraftiqueBE.API
 			builder.Services.AddControllers();
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
+
+			builder.Services.AddCors(options =>
+			{
+				options.AddDefaultPolicy(policy =>
+				{
+					policy.WithOrigins("http://localhost:3000")
+						  .AllowAnyHeader()
+						  .AllowAnyMethod()
+						  .AllowCredentials();
+				});
+			});
+
 			// Đăng ký Identity (User & Role)
 			builder.Services.AddIdentity<User, IdentityRole>(options =>
 			{
@@ -123,6 +172,7 @@ namespace CraftiqueBE.API
 			}
 
 			app.UseMiddleware<ExceptionHandlingMiddleware>();
+			app.UseCors();
 			app.UseAuthentication(); // Đặt UseAuthentication trước UseAuthorization
 			app.UseAuthorization();
 			app.MapControllers();
