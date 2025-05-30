@@ -88,39 +88,30 @@ namespace CraftiqueBE.Service.Extensions
 				: query;
 		}
 
-		public static IQueryable<ProductItem> FilterByRAM(this IQueryable<ProductItem> query, List<string>? ramSizes)
+		public static IQueryable<ProductItem> FilterByMaterials(this IQueryable<ProductItem> query, List<string>? materials)
 		{
-			return ramSizes?.Any() == true
+			return materials?.Any() == true
 				? query.Where(p => p.ProductItemAttributes
-					.Any(pia => pia.Attribute.AttributeName == "RAM" &&
-							   ramSizes.Contains(pia.Value)))
+					.Any(pia => pia.Attribute.AttributeName == "Material" &&
+							   materials.Contains(pia.Value)))
 				: query;
 		}
 
-		public static IQueryable<ProductItem> FilterByROM(this IQueryable<ProductItem> query, List<string>? romSizes)
+		public static IQueryable<ProductItem> FilterBySizes(this IQueryable<ProductItem> query, List<string>? sizes)
 		{
-			return romSizes?.Any() == true
+			return sizes?.Any() == true
 				? query.Where(p => p.ProductItemAttributes
-					.Any(pia => pia.Attribute.AttributeName == "ROM" &&
-							   romSizes.Contains(pia.Value)))
+					.Any(pia => pia.Attribute.AttributeName == "Size" &&
+							   sizes.Contains(pia.Value)))
 				: query;
 		}
 
-		public static IQueryable<ProductItem> FilterByCPU(this IQueryable<ProductItem> query, List<string>? cpus)
+		public static IQueryable<ProductItem> FilterByShapes(this IQueryable<ProductItem> query, List<string>? shapes)
 		{
-			return cpus?.Any() == true
+			return shapes?.Any() == true
 				? query.Where(p => p.ProductItemAttributes
-					.Any(pia => pia.Attribute.AttributeName == "CPU" &&
-							   cpus.Contains(pia.Value)))
-				: query;
-		}
-
-		public static IQueryable<ProductItem> FilterByStorage(this IQueryable<ProductItem> query, List<string>? storages)
-		{
-			return storages?.Any() == true
-				? query.Where(p => p.ProductItemAttributes
-					.Any(pia => pia.Attribute.AttributeName == "Storage" &&
-							   storages.Contains(pia.Value)))
+					.Any(pia => pia.Attribute.AttributeName == "Shape" &&
+							   shapes.Contains(pia.Value)))
 				: query;
 		}
 
