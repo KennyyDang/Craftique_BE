@@ -23,6 +23,7 @@ namespace CraftiqueBE.Service
 			service.AddScoped<IAdminServices, AdminServices>();
 			service.AddScoped<IOrderServices, OrderServices>();
 			service.AddScoped<IAttributeServices, AttributeServices>();
+			service.AddScoped<IProductServices, ProductServices>();
 			service.AddScoped<IProductItemServices, ProductItemServices>();
 			service.AddScoped<IProductItemAttributeServices, ProductItemAttributeServices>();
 			service.AddScoped<IProductImgServices, ProductImgServices>();
