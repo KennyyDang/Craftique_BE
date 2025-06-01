@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\models\\productitemmodel\\productitemsummarymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\models\\productitemmodel\\productitemsummarymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\models\\productitemmodel\\updateproductitemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\models\\productitemmodel\\updateproductitemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\viewmodels\\attributevm\\attributeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\viewmodels\\attributevm\\attributeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,14 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\controllers\\productitemattributecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\controllers\\productitemattributecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,14 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\controllers\\attributecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\controllers\\attributecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{40B54489-8B73-44DB-9741-BCBF6AF5B2B3}|CraftiqueBE.Service\\CraftiqueBE.Service.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.service\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -383,14 +395,6 @@
       "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\models\\productmodel\\createproductmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\models\\productitemmodel\\updateproductitemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\models\\productitemmodel\\updateproductitemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\models\\productitemmodel\\productitemsummarymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\models\\productitemmodel\\productitemsummarymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\models\\productitemmodel\\createproductitemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\models\\productitemmodel\\createproductitemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -469,10 +473,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\models\\blogimagemodel\\createblogimagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\models\\blogimagemodel\\createblogimagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\viewmodels\\attributevm\\attributeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\viewmodels\\attributevm\\attributeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\models\\attributemodel\\updateattributemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -586,10 +586,6 @@
       "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\entities\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|d:\\8th\\exe201\\craftique_be\\craftiquebe.api\\craftiquebe.data\\migrations\\20250526151054_initidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A63089CC-6305-41F4-8CD4-F92CA7B921C3}|CraftiqueBE.Data\\CraftiqueBE.Data.csproj|solutionrelative:craftiquebe.data\\migrations\\20250526151054_initidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -601,7 +597,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -609,59 +605,111 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-26T06:19:29.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProductItemController.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductItemController.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ProductItemController.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductItemController.cs",
-              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ProductItemController.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAkwHsAAABQAAAAAAAAAA==",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAA3wM8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:27:21.104Z",
+              "WhenOpened": "2025-05-29T09:31:28.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AttributeViewModel.cs",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\AttributeVM\\AttributeViewModel.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\AttributeVM\\AttributeViewModel.cs",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\AttributeVM\\AttributeViewModel.cs",
+              "RelativeToolTip": "CraftiqueBE.Data\\ViewModels\\AttributeVM\\AttributeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T09:57:31.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpdateProductItemModel.cs",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\UpdateProductItemModel.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemModel\\UpdateProductItemModel.cs",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\UpdateProductItemModel.cs",
+              "RelativeToolTip": "CraftiqueBE.Data\\Models\\ProductItemModel\\UpdateProductItemModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T17:02:27.838Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ProductItemAttributeController.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductItemAttributeController.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ProductItemAttributeController.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductItemAttributeController.cs",
-              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ProductItemAttributeController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAUwGUAAAACAAAAAAAAAA==",
+              "Title": "ProductItemSummaryModel.cs",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemSummaryModel.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemSummaryModel.cs",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemSummaryModel.cs",
+              "RelativeToolTip": "CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemSummaryModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:26:55.128Z",
+              "WhenOpened": "2025-05-28T17:01:01.806Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProductImgsController.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductImgsController.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ProductImgsController.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductImgsController.cs",
-              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ProductImgsController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAswCIAAAA8AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAwwBMAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:26:33.734Z",
+              "WhenOpened": "2025-05-30T02:02:05.117Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Program.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\Program.cs",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Program.cs",
+              "RelativeToolTip": "CraftiqueBE.API\\Program.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwL0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T06:04:31.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ProductController.cs",
               "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductController.cs",
               "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAYwCIAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwBQAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T18:25:28.086Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\OrderController.cs",
@@ -669,38 +717,47 @@
               "RelativeToolTip": "CraftiqueBE.API\\Controllers\\OrderController.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAvwBkAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:22:45.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:22:45.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Program.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.API\\Program.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Program.cs",
-              "RelativeToolTip": "CraftiqueBE.API\\Program.cs",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAgwL0AAAAEAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "ProductImgsController.cs",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductImgsController.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ProductImgsController.cs",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductImgsController.cs",
+              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ProductImgsController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAswCIAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T06:04:31.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:26:33.734Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ProductsController.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "ProductItemAttributeController.cs",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductItemAttributeController.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ProductItemAttributeController.cs",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductItemAttributeController.cs",
+              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ProductItemAttributeController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAUwGUAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T06:04:36.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:26:55.128Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
+              "Title": "ProductItemController.cs",
+              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductItemController.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ProductItemController.cs",
+              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ProductItemController.cs",
+              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ProductItemController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwHsAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T18:27:21.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ProductItemFilterModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemFilterModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemFilterModel.cs",
@@ -708,12 +765,11 @@
               "RelativeToolTip": "CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemFilterModel.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:53:37.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T16:53:37.675Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "ReviewController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ReviewController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ReviewController.cs",
@@ -721,12 +777,11 @@
               "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ReviewController.cs",
               "ViewState": "AgIAANQAAAAAAAAAAAAUwN0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:27:43.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:27:43.837Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "ShipperController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ShipperController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ShipperController.cs",
@@ -734,12 +789,11 @@
               "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ShipperController.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAUwGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:28:46.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:28:46.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "ChatHub.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Hubs\\ChatHub.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Hubs\\ChatHub.cs",
@@ -747,12 +801,11 @@
               "RelativeToolTip": "CraftiqueBE.API\\Hubs\\ChatHub.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:29:12.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:29:12.105Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "NotificationHub.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Hubs\\NotificationHub.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Hubs\\NotificationHub.cs",
@@ -760,12 +813,11 @@
               "RelativeToolTip": "CraftiqueBE.API\\Hubs\\NotificationHub.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAQwB4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:23:52.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:23:52.794Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "ChatController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\ChatController.cs",
@@ -773,12 +825,11 @@
               "RelativeToolTip": "CraftiqueBE.API\\Controllers\\ChatController.cs",
               "ViewState": "AgIAAI4AAAAAAAAAAAAUwKkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:21:56.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:21:56.177Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "NotificationController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\NotificationController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\NotificationController.cs",
@@ -786,12 +837,11 @@
               "RelativeToolTip": "CraftiqueBE.API\\Controllers\\NotificationController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:22:27.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:22:27.086Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\CategoryController.cs",
@@ -799,12 +849,11 @@
               "RelativeToolTip": "CraftiqueBE.API\\Controllers\\CategoryController.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAUwFIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:21:33.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:21:33.734Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "BlogController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\BlogController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\BlogController.cs",
@@ -812,12 +861,11 @@
               "RelativeToolTip": "CraftiqueBE.API\\Controllers\\BlogController.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAUwE4AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:21:15.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:21:15.623Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "AttributeController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\AttributeController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\AttributeController.cs",
@@ -825,12 +873,11 @@
               "RelativeToolTip": "CraftiqueBE.API\\Controllers\\AttributeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:20:53.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:20:53.297Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "ReviewServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\ReviewServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\ReviewServices.cs",
@@ -838,12 +885,11 @@
               "RelativeToolTip": "CraftiqueBE.Service\\Services\\ReviewServices.cs",
               "ViewState": "AgIAAMoAAAAAAAAAAAAewAkBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:14:24.437Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:14:24.437Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "ProductImgServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\ProductImgServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\ProductImgServices.cs",
@@ -851,12 +897,11 @@
               "RelativeToolTip": "CraftiqueBE.Service\\Services\\ProductImgServices.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAYwA0AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T18:13:40.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T18:13:40.449Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "ProductItemAttributeServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\ProductItemAttributeServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\ProductItemAttributeServices.cs",
@@ -864,12 +909,11 @@
               "RelativeToolTip": "CraftiqueBE.Service\\Services\\ProductItemAttributeServices.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAgwCAAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T12:07:25.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T12:07:25.671Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "CategoryServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\CategoryServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\CategoryServices.cs",
@@ -881,7 +925,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "BlogServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\BlogServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\BlogServices.cs",
@@ -893,7 +937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "UserServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\UserServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\UserServices.cs",
@@ -901,12 +945,11 @@
               "RelativeToolTip": "CraftiqueBE.Service\\Services\\UserServices.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAwwIcAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T09:36:43.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T09:36:43.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\DependencyInjection.cs",
@@ -914,38 +957,11 @@
               "RelativeToolTip": "CraftiqueBE.Service\\DependencyInjection.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T08:22:13.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T08:22:13.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAUwN8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T09:31:28.055Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T02:02:05.117Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "ChatServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\ChatServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\ChatServices.cs",
@@ -957,7 +973,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "NotificationServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\NotificationServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\NotificationServices.cs",
@@ -969,7 +985,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "ProductServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\ProductServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\ProductServices.cs",
@@ -981,7 +997,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "ProductItemServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\ProductItemServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\ProductItemServices.cs",
@@ -993,7 +1009,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "AttributeServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\AttributeServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\AttributeServices.cs",
@@ -1005,7 +1021,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "ProductItemExtensions.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Extensions\\ProductItemExtensions.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Extensions\\ProductItemExtensions.cs",
@@ -1017,7 +1033,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "CreateAttributeModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\AttributeModel\\CreateAttributeModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\AttributeModel\\CreateAttributeModel.cs",
@@ -1029,7 +1045,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "IReviewServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IReviewServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IReviewServices.cs",
@@ -1041,7 +1057,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "INotificationServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\INotificationServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\INotificationServices.cs",
@@ -1053,7 +1069,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "AdminServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\AdminServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\AdminServices.cs",
@@ -1065,7 +1081,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "GoogleAuthModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\AuthenticationModel\\GoogleAuthModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\AuthenticationModel\\GoogleAuthModel.cs",
@@ -1077,7 +1093,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\UnitOfWork.cs",
@@ -1089,7 +1105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\appsettings.json",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\appsettings.json",
@@ -1101,7 +1117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "OrderExtension.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Extensions\\OrderExtension.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Extensions\\OrderExtension.cs",
@@ -1113,7 +1129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "OrderServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\OrderServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\OrderServices.cs",
@@ -1125,7 +1141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\UserController.cs",
@@ -1137,7 +1153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "IOrderServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IOrderServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IOrderServices.cs",
@@ -1149,7 +1165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "IChatServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IChatServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IChatServices.cs",
@@ -1161,7 +1177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "ICategoryServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\ICategoryServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\ICategoryServices.cs",
@@ -1173,7 +1189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "IBlogServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IBlogServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IBlogServices.cs",
@@ -1185,7 +1201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "IAttributeServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IAttributeServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IAttributeServices.cs",
@@ -1197,7 +1213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "IAdminServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IAdminServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IAdminServices.cs",
@@ -1209,7 +1225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "IProductImgServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IProductImgServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IProductImgServices.cs",
@@ -1221,7 +1237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "IProductItemAttributeServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IProductItemAttributeServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IProductItemAttributeServices.cs",
@@ -1233,7 +1249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "IProductItemServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IProductItemServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IProductItemServices.cs",
@@ -1245,7 +1261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "IProductServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IProductServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IProductServices.cs",
@@ -1257,7 +1273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "IAccountServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IAccountServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IAccountServices.cs",
@@ -1269,7 +1285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "DbInitializer.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Data\\DbInitializer.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Data\\DbInitializer.cs",
@@ -1281,7 +1297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "UserExtention.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Extensions\\UserExtention.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Extensions\\UserExtention.cs",
@@ -1293,7 +1309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "CraftiqueDBContext.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Data\\CraftiqueDBContext.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Data\\CraftiqueDBContext.cs",
@@ -1305,7 +1321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "EmailConfiguration.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Helper\\EmailHelper\\EmailConfiguration.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Helper\\EmailHelper\\EmailConfiguration.cs",
@@ -1317,7 +1333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "EmailHelper.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Helper\\EmailHelper\\EmailHelper.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Helper\\EmailHelper\\EmailHelper.cs",
@@ -1329,7 +1345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "IEmailHelper.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Helper\\EmailHelper\\IEmailHelper.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Helper\\EmailHelper\\IEmailHelper.cs",
@@ -1341,7 +1357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "AccountServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\AccountServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\AccountServices.cs",
@@ -1353,7 +1369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "IUserServices.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Interfaces\\IUserServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Interfaces\\IUserServices.cs",
@@ -1365,7 +1381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "ExceptionHandlingMiddleware.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\MiddleWares\\ExceptionHandlingMiddleware.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\MiddleWares\\ExceptionHandlingMiddleware.cs",
@@ -1377,7 +1393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "EmailConfirmationTokenProvider.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\CustomTokenProviders\\EmailConfirmationTokenProvider.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.API\\CustomTokenProviders\\EmailConfirmationTokenProvider.cs",
@@ -1389,7 +1405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 68,
               "Title": "Repository.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Repository.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Repository.cs",
@@ -1401,7 +1417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 67,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\DependencyInjection.cs",
@@ -1413,7 +1429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "EmailRequestModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\EmailModel\\EmailRequestModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\EmailModel\\EmailRequestModel.cs",
@@ -1425,7 +1441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 75,
               "Title": "AutoMapperProfile.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Mapping\\AutoMapperProfile.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Mapping\\AutoMapperProfile.cs",
@@ -1437,7 +1453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 77,
               "Title": "UserViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\UserVM\\UserViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\UserVM\\UserViewModel.cs",
@@ -1449,7 +1465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 73,
               "Title": "OrderStatusHelper.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Helper\\OrderStatusHelper.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Helper\\OrderStatusHelper.cs",
@@ -1461,7 +1477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 71,
               "Title": "IRepository.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Interfaces\\IRepository.cs",
@@ -1473,7 +1489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 70,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Interfaces\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Interfaces\\IUnitOfWork.cs",
@@ -1485,7 +1501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 76,
               "Title": "ShipperViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\UserVM\\ShipperViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\UserVM\\ShipperViewModel.cs",
@@ -1497,7 +1513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 78,
               "Title": "ReviewViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ReviewVM\\ReviewViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ReviewVM\\ReviewViewModel.cs",
@@ -1509,7 +1525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 69,
               "Title": "CraftiqueBE.Service.csproj",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\CraftiqueBE.Service.csproj",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\CraftiqueBE.Service.csproj",
@@ -1521,7 +1537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 79,
               "Title": "ProductItemViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ProductItemVM\\ProductItemViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ProductItemVM\\ProductItemViewModel.cs",
@@ -1533,7 +1549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 72,
               "Title": "IBaseEntity.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Interfaces\\IBaseEntity.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Interfaces\\IBaseEntity.cs",
@@ -1545,7 +1561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 80,
               "Title": "ProductViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ProductVM\\ProductViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ProductVM\\ProductViewModel.cs",
@@ -1557,7 +1573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 81,
               "Title": "ProductItemSalesViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ProductItemVM\\ProductItemSalesViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ProductItemVM\\ProductItemSalesViewModel.cs",
@@ -1569,7 +1585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 74,
               "Title": "RolesHelper.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Helper\\RolesHelper.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Helper\\RolesHelper.cs",
@@ -1581,7 +1597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 82,
               "Title": "ProductItemAttributeViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ProductItemAttributeVM\\ProductItemAttributeViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ProductItemAttributeVM\\ProductItemAttributeViewModel.cs",
@@ -1593,7 +1609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 83,
               "Title": "ProductImgViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ProductImgVM\\ProductImgViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ProductImgVM\\ProductImgViewModel.cs",
@@ -1605,7 +1621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 84,
               "Title": "OrderViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\OrderVM\\OrderViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\OrderVM\\OrderViewModel.cs",
@@ -1617,7 +1633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 90,
               "Title": "UserModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\UserModel\\UserModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\UserModel\\UserModel.cs",
@@ -1629,7 +1645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 91,
               "Title": "ChangeRoleModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\UserModel\\ChangeRoleModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\UserModel\\ChangeRoleModel.cs",
@@ -1641,7 +1657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 92,
               "Title": "CreateShipperReviewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ReviewModel\\CreateShipperReviewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ReviewModel\\CreateShipperReviewModel.cs",
@@ -1653,7 +1669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 93,
               "Title": "CreateReviewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ReviewModel\\CreateReviewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ReviewModel\\CreateReviewModel.cs",
@@ -1665,7 +1681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 85,
               "Title": "JwtViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\AuthenticationVM\\JwtViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\AuthenticationVM\\JwtViewModel.cs",
@@ -1677,7 +1693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 86,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\AuthenticationModel\\LoginModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\AuthenticationModel\\LoginModel.cs",
@@ -1689,7 +1705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 89,
               "Title": "RefreshTokenModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\AuthenticationModel\\RefreshTokenModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\AuthenticationModel\\RefreshTokenModel.cs",
@@ -1701,7 +1717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 88,
               "Title": "RegisterModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\AuthenticationModel\\RegisterModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\AuthenticationModel\\RegisterModel.cs",
@@ -1713,7 +1729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 87,
               "Title": "ResetPasswordModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\AuthenticationModel\\ResetPasswordModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\AuthenticationModel\\ResetPasswordModel.cs",
@@ -1725,7 +1741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 94,
               "Title": "CreateProductReviewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ReviewModel\\CreateProductReviewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ReviewModel\\CreateProductReviewModel.cs",
@@ -1737,7 +1753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 95,
               "Title": "UpdateProductModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductModel\\UpdateProductModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductModel\\UpdateProductModel.cs",
@@ -1749,7 +1765,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 96,
               "Title": "ProductFilterModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductModel\\ProductFilterModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductModel\\ProductFilterModel.cs",
@@ -1761,7 +1777,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 97,
               "Title": "CreateProductModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductModel\\CreateProductModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductModel\\CreateProductModel.cs",
@@ -1773,31 +1789,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
-              "Title": "UpdateProductItemModel.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\UpdateProductItemModel.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemModel\\UpdateProductItemModel.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\UpdateProductItemModel.cs",
-              "RelativeToolTip": "CraftiqueBE.Data\\Models\\ProductItemModel\\UpdateProductItemModel.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwCMAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T17:02:27.838Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 96,
-              "Title": "ProductItemSummaryModel.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemSummaryModel.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemSummaryModel.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemSummaryModel.cs",
-              "RelativeToolTip": "CraftiqueBE.Data\\Models\\ProductItemModel\\ProductItemSummaryModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T17:01:01.806Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 98,
               "Title": "CreateProductItemModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\CreateProductItemModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemModel\\CreateProductItemModel.cs",
@@ -1809,7 +1801,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 99,
               "Title": "CategoryProductFilterModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemModel\\CategoryProductFilterModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemModel\\CategoryProductFilterModel.cs",
@@ -1821,7 +1813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 100,
               "Title": "UpdateProductItemAttributeModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemAttributeModel\\UpdateProductItemAttributeModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemAttributeModel\\UpdateProductItemAttributeModel.cs",
@@ -1833,7 +1825,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 101,
               "Title": "ProductItemAttributeFilterModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemAttributeModel\\ProductItemAttributeFilterModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemAttributeModel\\ProductItemAttributeFilterModel.cs",
@@ -1845,7 +1837,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 102,
               "Title": "CreateProductItemAttributeModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductItemAttributeModel\\CreateProductItemAttributeModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductItemAttributeModel\\CreateProductItemAttributeModel.cs",
@@ -1857,7 +1849,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 103,
               "Title": "UpdateProductImgModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductImgModel\\UpdateProductImgModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductImgModel\\UpdateProductImgModel.cs",
@@ -1869,7 +1861,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 104,
               "Title": "CreateProductImgModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\ProductImgModel\\CreateProductImgModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\ProductImgModel\\CreateProductImgModel.cs",
@@ -1881,7 +1873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 105,
               "Title": "UpdateOrderStatusModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\OrderModel\\UpdateOrderStatusModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\OrderModel\\UpdateOrderStatusModel.cs",
@@ -1893,7 +1885,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 106,
               "Title": "OrderModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\OrderModel\\OrderModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\OrderModel\\OrderModel.cs",
@@ -1905,7 +1897,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 107,
               "Title": "UpdateBlogModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\BlogModel\\UpdateBlogModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\BlogModel\\UpdateBlogModel.cs",
@@ -1917,7 +1909,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 108,
               "Title": "CreateBlogModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\BlogModel\\CreateBlogModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\BlogModel\\CreateBlogModel.cs",
@@ -1929,7 +1921,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 109,
               "Title": "CreateGroupRoomRequest.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ChatVM\\CreateGroupRoomRequest.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ChatVM\\CreateGroupRoomRequest.cs",
@@ -1941,7 +1933,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 110,
               "Title": "ChatRoomViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ChatVM\\ChatRoomViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ChatVM\\ChatRoomViewModel.cs",
@@ -1953,7 +1945,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 111,
               "Title": "ChatParticipantViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ChatVM\\ChatParticipantViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ChatVM\\ChatParticipantViewModel.cs",
@@ -1965,7 +1957,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 112,
               "Title": "ChatMessageViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\ChatVM\\ChatMessageViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\ChatVM\\ChatMessageViewModel.cs",
@@ -1977,7 +1969,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 113,
               "Title": "CategoryViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\CategoryVM\\CategoryViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\CategoryVM\\CategoryViewModel.cs",
@@ -1989,7 +1981,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 114,
               "Title": "UpdateCategoryModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\CategoryModel\\UpdateCategoryModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\CategoryModel\\UpdateCategoryModel.cs",
@@ -2001,7 +1993,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 115,
               "Title": "CreateCategoryModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\CategoryModel\\CreateCategoryModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\CategoryModel\\CreateCategoryModel.cs",
@@ -2013,7 +2005,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 116,
               "Title": "BlogViewModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\BlogVM\\BlogViewModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\BlogVM\\BlogViewModel.cs",
@@ -2025,7 +2017,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 117,
               "Title": "CreateBlogImageModel.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Models\\BlogImageModel\\CreateBlogImageModel.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Models\\BlogImageModel\\CreateBlogImageModel.cs",
@@ -2034,18 +2026,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T10:04:07.88Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 117,
-              "Title": "AttributeViewModel.cs",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\AttributeVM\\AttributeViewModel.cs",
-              "RelativeDocumentMoniker": "CraftiqueBE.Data\\ViewModels\\AttributeVM\\AttributeViewModel.cs",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\ViewModels\\AttributeVM\\AttributeViewModel.cs",
-              "RelativeToolTip": "CraftiqueBE.Data\\ViewModels\\AttributeVM\\AttributeViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T09:57:31.729Z"
             },
             {
               "$type": "Document",
@@ -2169,7 +2149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 146,
               "Title": "20250526151054_InitIdentity.cs",
               "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Data\\Migrations\\20250526151054_InitIdentity.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Data\\Migrations\\20250526151054_InitIdentity.cs",
@@ -2370,18 +2350,6 @@
               "ViewState": "AgIAABoAAAAAAAAAAAAowDAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T06:38:51.698Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 146,
-              "Title": ".gitignore",
-              "DocumentMoniker": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "D:\\8th\\EXE201\\Craftique_BE\\CraftiqueBE.API\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-26T06:19:29.291Z"
             },
             {
               "$type": "Document",
