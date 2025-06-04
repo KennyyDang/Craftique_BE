@@ -20,6 +20,12 @@ namespace CraftiqueBE.API.MiddleWares
 			{
 				await _next(context);
 			}
+			catch (UnauthorizedAccessException ex)
+			{
+				context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+				context.Response.ContentType = "application/json";
+				await context.Response.WriteAsJsonAsync(new { message = ex.Message });
+			}
 			catch (Exception ex)
 			{
 				await HandleExceptionAsync(context, ex);
