@@ -337,5 +337,6 @@ namespace CraftiqueBE.Service.Services
 			}
 			await _userManager.AddToRoleAsync(user, roleName);
 		}
+
 	}
 }
