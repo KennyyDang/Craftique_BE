@@ -32,7 +32,9 @@ namespace CraftiqueBE.Data
 		private readonly IRepository<OrderDetail> _orderDetailRepository;
 		private readonly IRepository<User> _userRepository;
 		private readonly IRepository<Entities.Notification> _notificationRepository;
-		//private readonly IRepository<PaypalTransaction> _paypalTransactionRepository;
+		private readonly IRepository<Wallet> _walletRepository;
+		private readonly IRepository<WalletTransaction> _walletTransactionRepository;
+		private readonly IRepository<Payment> _paymentRepository;
 
 		public UnitOfWork(
 			CraftiqueDBContext dbContext,
@@ -51,8 +53,10 @@ namespace CraftiqueBE.Data
 			IRepository<ChatParticipant> chatParticipantRepository,
 			IRepository<Order> orderRepository,
 			IRepository<OrderDetail> orderDetailRepository,
-			IRepository<Entities.Notification> notificationRepository
-			//IRepository<PaypalTransaction> paypalTransactionRepository
+			IRepository<Entities.Notification> notificationRepository,
+			IRepository<Wallet> walletRepository,
+			IRepository<WalletTransaction> walletTransactionRepository,
+			IRepository<Payment> paymentRepository
 		)
 		{
 			_dbContext = dbContext;
@@ -72,7 +76,9 @@ namespace CraftiqueBE.Data
 			_orderRepository = orderRepository;
 			_orderDetailRepository = orderDetailRepository;
 			_notificationRepository = notificationRepository;
-			//_paypalTransactionRepository = paypalTransactionRepository;
+			_walletRepository = walletRepository;
+			_walletTransactionRepository = walletTransactionRepository;
+			_paymentRepository = paymentRepository;
 		}
 
 		// 🔹 Repository getter
@@ -91,8 +97,12 @@ namespace CraftiqueBE.Data
 		public IRepository<Order> OrderRepository => _orderRepository;
 		public IRepository<OrderDetail> OrderDetailRepository => _orderDetailRepository;
 		public IRepository<Entities.Notification> NotificationRepository => _notificationRepository;
-		//public IRepository<PaypalTransaction> PaypalTransactionRepository => _paypalTransactionRepository;
+		public IRepository<Wallet> WalletRepository => _walletRepository;
+		public IRepository<WalletTransaction> WalletTransactionRepository => _walletTransactionRepository;
+
 		public IRepository<User> UserRepository => _userRepository;
+
+		public IRepository<Payment> PaymentRepository => _paymentRepository;
 
 		// 🔹 Transaction - Dùng async để tránh block luồng
 		public async Task BeginTransactionAsync()

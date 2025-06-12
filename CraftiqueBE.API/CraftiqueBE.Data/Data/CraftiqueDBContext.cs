@@ -37,6 +37,9 @@ namespace CraftiqueBE.Data
 		public DbSet<UserBlogView> UserBlogViews { get; set; }
 		public DbSet<Voucher> Vouchers { get; set; }
 		public DbSet<Role> Roles { get; set; }
+		public DbSet<Wallet> Wallets { get; set; }
+		public DbSet<WalletTransaction> WalletTransactions { get; set; }
+		public DbSet<Payment> Payments { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

@@ -26,6 +26,9 @@ namespace CraftiqueBE.Data.Interfaces
 		IRepository<Review> ReviewRepository { get; }
 		IRepository<User> UserRepository { get; }
 		IRepository<Entities.Notification> NotificationRepository { get; }
+		IRepository<Wallet> WalletRepository { get; }
+		IRepository<WalletTransaction> WalletTransactionRepository { get; }
+		IRepository<Payment> PaymentRepository { get; }
 
 		Task BeginTransactionAsync();
 		Task CommitTransactionAsync();

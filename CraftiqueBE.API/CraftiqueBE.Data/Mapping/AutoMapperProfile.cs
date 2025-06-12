@@ -28,6 +28,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using AutoMapper;
+using CraftiqueBE.Data.ViewModels.WalletVM;
+using CraftiqueBE.Data.Models.WalletModel;
 
 namespace CraftiqueBE.Data.Mapping
 {
@@ -134,6 +136,16 @@ namespace CraftiqueBE.Data.Mapping
 				.ForMember(dest => dest.OrderDetails, opt => opt.MapFrom(src => src.OrderDetails));
 
 			CreateMap<OrderDetail, OrderDetailViewModel>();
+
+			CreateMap<Wallet, WalletViewModel>();
+
+			CreateMap<Payment, PaymentViewModel>();
+
+			CreateMap<CreatePaymentModel, Payment>()
+			.ForMember(dest => dest.Status, opt => opt.MapFrom(src => "Pending"))
+			.ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+			.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
+			CreateMap<UpdatePaymentModel, Payment>();
 
 		}
 	}
