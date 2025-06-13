@@ -12,5 +12,6 @@ namespace CraftiqueBE.Service.Interfaces
 	{
 		Task<PaymentViewModel> CreatePaymentAsync(CreatePaymentModel model);
 		Task<bool> UpdatePaymentStatusAsync(int paymentId, string newStatus);
+		Task<bool> UpdatePaymentStatusByOrderIdAsync(string orderId, string newStatus);
 	}
 }

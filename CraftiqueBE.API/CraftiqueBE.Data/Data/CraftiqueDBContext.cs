@@ -197,6 +197,17 @@ namespace CraftiqueBE.Data
 				.HasForeignKey(v => v.ProductItemID)
 				.OnDelete(DeleteBehavior.Restrict);
 
+			modelBuilder.Entity<Payment>()
+				.Property(p => p.Amount)
+				.HasPrecision(18, 2);
+
+			modelBuilder.Entity<Wallet>()
+				.Property(w => w.Balance)
+				.HasPrecision(18, 2);
+
+			modelBuilder.Entity<WalletTransaction>()
+				.Property(t => t.Amount)
+				.HasPrecision(18, 2);
 		}
 
 	}
