@@ -6,7 +6,6 @@ using CraftiqueBE.Data.ViewModels.WalletVM;
 using CraftiqueBE.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace CraftiqueBE.Service.Services
 {
 	public class PaymentServices : IPaymentServices
@@ -24,6 +23,7 @@ namespace CraftiqueBE.Service.Services
 		{
 			var payment = _mapper.Map<Payment>(model);
 			payment.CreatedAt = DateTime.UtcNow;
+
 			await _unitOfWork.PaymentRepository.AddAsync(payment);
 			await _unitOfWork.SaveChangesAsync();
 
@@ -41,12 +41,7 @@ namespace CraftiqueBE.Service.Services
 			{
 				payment.PaidAt = DateTime.UtcNow;
 
-				var wallet = await _unitOfWork.WalletRepository
-					.GetAllQueryable()
-					.FirstOrDefaultAsync(w => w.UserId == payment.UserId);
-
-				if (wallet == null)
-					throw new Exception("Wallet not found for the user.");
+				var wallet = await EnsureWalletExistsAsync(payment.UserId);
 
 				await _unitOfWork.WalletTransactionRepository.AddAsync(new WalletTransaction
 				{
@@ -65,5 +60,60 @@ namespace CraftiqueBE.Service.Services
 			return true;
 		}
 
+		public async Task<bool> UpdatePaymentStatusByOrderIdAsync(string orderId, string newStatus)
+		{
+			var payment = await _unitOfWork.PaymentRepository
+				.GetAllQueryable()
+				.FirstOrDefaultAsync(p => p.OrderId == orderId);
+
+			if (payment == null) return false;
+
+			payment.Status = newStatus;
+
+			if (newStatus.ToLower() == "success")
+			{
+				payment.PaidAt = DateTime.UtcNow;
+
+				var wallet = await EnsureWalletExistsAsync(payment.UserId);
+
+				await _unitOfWork.WalletTransactionRepository.AddAsync(new WalletTransaction
+				{
+					WalletId = wallet.WalletId,
+					Amount = payment.Amount,
+					Description = "MoMo Top-up (by OrderID)",
+					Type = "Deposit",
+					CreatedAt = DateTime.UtcNow,
+					IsDeleted = false
+				});
+
+				wallet.Balance += payment.Amount;
+			}
+
+			await _unitOfWork.SaveChangesAsync();
+			return true;
+		}
+
+		private async Task<Wallet> EnsureWalletExistsAsync(string userId)
+		{
+			var wallet = await _unitOfWork.WalletRepository
+				.GetAllQueryable()
+				.FirstOrDefaultAsync(w => w.UserId == userId);
+
+			if (wallet == null)
+			{
+				wallet = new Wallet
+				{
+					UserId = userId,
+					Balance = 0,
+					CreatedAt = DateTime.UtcNow,
+					IsDeleted = false
+				};
+
+				await _unitOfWork.WalletRepository.AddAsync(wallet);
+				await _unitOfWork.SaveChangesAsync();
+			}
+
+			return wallet;
+		}
 	}
 }

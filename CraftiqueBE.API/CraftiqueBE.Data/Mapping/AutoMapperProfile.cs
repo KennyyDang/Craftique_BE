@@ -147,6 +147,7 @@ namespace CraftiqueBE.Data.Mapping
 			.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
 			CreateMap<UpdatePaymentModel, Payment>();
 
+			CreateMap<WalletTransaction, WalletTransactionViewModel>();
 		}
 	}
 }
