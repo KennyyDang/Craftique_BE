@@ -10,7 +10,7 @@ namespace CraftiqueBE.Service.Interfaces
 {
 	public interface IPaymentServices
 	{
-		Task<PaymentViewModel> CreatePaymentAsync(CreatePaymentModel model);
+		Task<PaymentViewModel> CreatePaymentAsync(CreatePaymentModel model, string userId);
 		Task<bool> UpdatePaymentStatusAsync(int paymentId, string newStatus);
 		Task<bool> UpdatePaymentStatusByOrderIdAsync(string orderId, string newStatus);
 	}

@@ -12,9 +12,10 @@ namespace CraftiqueBE.Data.ViewModels.WalletVM
 		public string UserId { get; set; }
 		public string OrderId { get; set; }
 		public string RequestId { get; set; }
-		public string MomoOrderId { get; set; }
 		public string Status { get; set; }
 		public decimal Amount { get; set; }
+		public string PayUrl { get; set; }
+		public string Provider { get; set; }
 		public DateTime CreatedAt { get; set; }
 		public DateTime? PaidAt { get; set; }
 	}
