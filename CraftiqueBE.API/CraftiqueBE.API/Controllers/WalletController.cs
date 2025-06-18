@@ -1,10 +1,10 @@
 ﻿using CraftiqueBE.Data.Helper;
-using CraftiqueBE.Data.Models.MomoModel;
 using CraftiqueBE.Data.Models.WalletModel;
 using CraftiqueBE.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Text.Json;
 
 namespace CraftiqueBE.API.Controllers
 {
@@ -50,18 +50,28 @@ namespace CraftiqueBE.API.Controllers
 		}
 
 		/// <summary>
-		/// Tạo yêu cầu nạp tiền vào ví (qua Momo)
+		/// Tạo yêu cầu nạp tiền vào ví qua PayOS
 		/// </summary>
 		[HttpPost("request-topup")]
 		[Authorize(Roles = RolesHelper.Customer)]
 		public async Task<IActionResult> CreatePayment([FromBody] CreatePaymentModel model)
 		{
-			if (!ModelState.IsValid) return BadRequest(ModelState);
+			// Lấy UserId từ token xác thực
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			if (string.IsNullOrEmpty(userId))
+			{
+				return Unauthorized("Không tìm thấy thông tin người dùng. Vui lòng đăng nhập lại.");
+			}
+			// Kiểm tra ModelState
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
 
-			model.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-			var payment = await _paymentService.CreatePaymentAsync(model);
+			// Gọi dịch vụ để tạo payment
+			var payment = await _paymentService.CreatePaymentAsync(model, userId);
 
-			return Ok(payment); // Trong đó sẽ trả về PayUrl (link redirect)
+			return Ok(new { payUrl = payment.PayUrl }); // Trả về PayUrl
 		}
 
 		/// <summary>
@@ -76,21 +86,26 @@ namespace CraftiqueBE.API.Controllers
 		}
 
 		/// <summary>
-		/// Callback từ MoMo gọi về khi thanh toán thành công hoặc thất bại
+		/// Callback từ PayOS khi thanh toán thành công
 		/// </summary>
-		[HttpPost("momo/callback")]
-		[AllowAnonymous] // MoMo sẽ không có token, nên phải cho phép gọi
-		public async Task<IActionResult> MomoCallback([FromBody] MomoCallbackModel callback)
+		[HttpPost("payos/webhook")]
+		[AllowAnonymous] // PayOS không dùng token
+		public async Task<IActionResult> PayOSCallback([FromBody] JsonElement payload)
 		{
-			if (callback.ResultCode == 0)
+			var orderCode = payload.GetProperty("orderCode").GetString();
+			var status = payload.GetProperty("status").GetString(); // "PAID" hoặc "CANCELLED"
+
+			if (string.IsNullOrEmpty(orderCode)) return BadRequest("Missing order code");
+
+			if (status?.ToUpper() == "PAID")
 			{
-				var success = await _paymentService.UpdatePaymentStatusByOrderIdAsync(callback.OrderID, "Success");
-				return Ok(new { status = "confirmed", success });
+				var success = await _paymentService.UpdatePaymentStatusByOrderIdAsync(orderCode, "Success");
+				return Ok(new { message = "Thanh toán thành công", success });
 			}
 			else
 			{
-				await _paymentService.UpdatePaymentStatusByOrderIdAsync(callback.OrderID, "Failed");
-				return BadRequest(new { status = "failed", message = callback.Message });
+				await _paymentService.UpdatePaymentStatusByOrderIdAsync(orderCode, "Failed");
+				return BadRequest(new { message = "Thanh toán thất bại", status });
 			}
 		}
 	}

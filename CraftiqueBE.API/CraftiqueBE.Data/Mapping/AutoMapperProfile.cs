@@ -142,9 +142,9 @@ namespace CraftiqueBE.Data.Mapping
 			CreateMap<Payment, PaymentViewModel>();
 
 			CreateMap<CreatePaymentModel, Payment>()
-			.ForMember(dest => dest.Status, opt => opt.MapFrom(src => "Pending"))
-			.ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
-			.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
+				.ForMember(dest => dest.Status, opt => opt.MapFrom(_ => "Pending"))
+				.ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(_ => DateTime.UtcNow))
+				.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
 			CreateMap<UpdatePaymentModel, Payment>();
 
 			CreateMap<WalletTransaction, WalletTransactionViewModel>();

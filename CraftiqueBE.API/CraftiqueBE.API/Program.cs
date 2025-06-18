@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using CraftiqueBE.Data.Models.PayOsModel;
+
 
 namespace CraftiqueBE.API
 {
@@ -152,6 +154,9 @@ namespace CraftiqueBE.API
 			builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 			builder.Services.AddControllers();
 			builder.Services.AddEndpointsApiExplorer();
+
+			// PayOS Configuration
+			builder.Services.Configure<PayOSConfig>(builder.Configuration.GetSection("PayOS"));
 
 			// -------------------- BUILD APP --------------------
 

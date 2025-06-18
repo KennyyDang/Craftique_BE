@@ -25,11 +25,18 @@ namespace CraftiqueBE.Data.Entities
 
 		public string Description { get; set; }
 
+		/// <summary>
+		/// Tham chiếu đến bảng thanh toán nếu đây là giao dịch qua PayOS/MoMo
+		/// </summary>
+		public int? PaymentId { get; set; } // Nullable để cho phép transaction không cần payment
+
+		[ForeignKey("PaymentId")]
+		public virtual Payment? Payment { get; set; }
+
 		public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
 		public bool IsDeleted { get; set; }
 
 		public virtual Wallet Wallet { get; set; }
 	}
-
 }
