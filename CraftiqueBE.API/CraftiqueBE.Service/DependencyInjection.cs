@@ -33,10 +33,8 @@ namespace CraftiqueBE.Service
 			service.AddScoped<INotificationServices, NotificationServices>();
 			service.AddScoped<IChatServices, ChatServices>();
 			service.AddScoped<ICategoryServices, CategoryServices>();
-			service.AddScoped<IWalletServices, WalletServices>();
 			service.AddScoped<IPaymentServices, PaymentServices>(); 
 	
-
 			return service;
 		}
 	}

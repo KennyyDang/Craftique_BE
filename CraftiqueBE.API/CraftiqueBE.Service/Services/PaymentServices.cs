@@ -2,15 +2,14 @@
 using CraftiqueBE.Data.Entities;
 using CraftiqueBE.Data.Interfaces;
 using CraftiqueBE.Data.Models.PayOsModel;
-using CraftiqueBE.Data.Models.PayOSModel;
 using CraftiqueBE.Data.Models.WalletModel;
+using CraftiqueBE.Data.ViewModels.PaymentVM;
 using CraftiqueBE.Data.ViewModels.WalletVM;
 using CraftiqueBE.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
+using Net.payOS;
+using Net.payOS.Types;
 
 namespace CraftiqueBE.Service.Services
 {
@@ -19,82 +18,54 @@ namespace CraftiqueBE.Service.Services
 		private readonly IUnitOfWork _unitOfWork;
 		private readonly IMapper _mapper;
 		private readonly PayOSConfig _payos;
+		private readonly PayOS _payosSdk;
 
 		public PaymentServices(IUnitOfWork unitOfWork, IMapper mapper, IOptions<PayOSConfig> payosOptions)
 		{
 			_unitOfWork = unitOfWork;
 			_mapper = mapper;
 			_payos = payosOptions.Value;
+			_payosSdk = new PayOS(_payos.ClientId, _payos.ApiKey, _payos.ChecksumKey);
 		}
 
 		public async Task<PaymentViewModel> CreatePaymentAsync(CreatePaymentModel model, string userId)
 		{
-			string orderId = Guid.NewGuid().ToString();
-			string requestId = Guid.NewGuid().ToString();
+			var orderCode = DateTimeOffset.UtcNow.ToUnixTimeSeconds(); // PayOS yêu cầu dạng số
+			var description = "Thanh toán đơn hàng trên Craftique";
 
-			string rawData = $"{orderId}|{model.Amount}|{_payos.ReturnUrl}";
-			string signature = CreateSHA256Signature(rawData, _payos.ChecksumKey);
-
-			var payRequest = new PayOSRequestModel
+			var items = new List<ItemData>
 			{
-				orderCode = orderId,
-				amount = model.Amount,
-				description = "Nạp tiền vào ví người dùng",
-				returnUrl = _payos.ReturnUrl,
-				cancelUrl = _payos.CancelUrl,
-				signature = signature
+				new ItemData("Sản phẩm Craftique", 1, (int)(model.Amount * 1000)) // giá phải * 1000
+            };
+
+			var paymentData = new PaymentData(
+				orderCode: orderCode,
+				amount: (int)(model.Amount * 1000),
+				description: description,
+				items: items,
+				returnUrl: _payos.ReturnUrl,
+				cancelUrl: _payos.CancelUrl
+			);
+
+			var result = await _payosSdk.createPaymentLink(paymentData);
+
+			var payment = new Payment
+			{
+				UserId = userId,
+				OrderId = orderCode.ToString(),
+				RequestId = Guid.NewGuid().ToString(),
+				Amount = model.Amount,
+				Status = "Pending",
+				PayUrl = result.checkoutUrl,
+				PayOSOrderCode = orderCode.ToString(),
+				Provider = "PayOS",
+				CreatedAt = DateTime.UtcNow
 			};
 
-			Console.WriteLine("PayOS Request: " + JsonSerializer.Serialize(payRequest));
+			await _unitOfWork.PaymentRepository.AddAsync(payment);
+			await _unitOfWork.SaveChangesAsync();
 
-			var client = new HttpClient
-			{
-				Timeout = TimeSpan.FromSeconds(30)
-			};
-			client.DefaultRequestHeaders.Add("x-client-id", _payos.ClientId);
-			client.DefaultRequestHeaders.Add("x-api-key", _payos.ApiKey);
-
-			var content = new StringContent(JsonSerializer.Serialize(payRequest), Encoding.UTF8, "application/json");
-			int maxRetries = 3;
-			for (int i = 0; i < maxRetries; i++)
-			{
-				try
-				{
-					var response = await client.PostAsync("https://sandbox-api.payos.vn/v2/payment-requests", content); // Sử dụng sandbox
-					var body = await response.Content.ReadAsStringAsync();
-
-					if (!response.IsSuccessStatusCode)
-						throw new Exception($"PayOS failed: {body}");
-
-					var result = JsonSerializer.Deserialize<PayOSResponseModel>(body);
-
-					var payment = new Payment
-					{
-						UserId = userId,
-						OrderId = orderId,
-						RequestId = requestId,
-						Amount = model.Amount,
-						Status = "Pending",
-						CreatedAt = DateTime.UtcNow,
-						PayUrl = result.checkoutUrl,
-						PayOSOrderCode = result.orderCode,
-						Signature = signature,
-						Provider = "PayOS"
-					};
-
-					await _unitOfWork.PaymentRepository.AddAsync(payment);
-					await _unitOfWork.SaveChangesAsync();
-
-					return _mapper.Map<PaymentViewModel>(payment);
-				}
-				catch (HttpRequestException ex)
-				{
-					Console.WriteLine($"Retry {i + 1} failed: {ex.Message}");
-					if (i == maxRetries - 1) throw;
-					await Task.Delay(1000 * (i + 1));
-				}
-			}
-			throw new Exception("Không thể kết nối tới PayOS sau nhiều lần thử.");
+			return _mapper.Map<PaymentViewModel>(payment);
 		}
 
 		public async Task<bool> UpdatePaymentStatusAsync(int paymentId, string newStatus)
@@ -108,20 +79,17 @@ namespace CraftiqueBE.Service.Services
 			{
 				payment.PaidAt = DateTime.UtcNow;
 
-				var wallet = await EnsureWalletExistsAsync(payment.UserId);
-
-				await _unitOfWork.WalletTransactionRepository.AddAsync(new WalletTransaction
+				var transaction = new PaymentTransaction
 				{
-					WalletId = wallet.WalletId,
-					Amount = payment.Amount,
-					Description = "Nạp ví qua PayOS",
-					Type = "Deposit",
 					PaymentId = payment.PaymentId,
-					CreatedAt = DateTime.UtcNow,
-					IsDeleted = false
-				});
+					Type = payment.Provider, // "PayOS" hoặc các provider khác nếu có
+					Status = "Success",
+					Amount = payment.Amount,
+					Description = "Thanh toán thành công qua " + payment.Provider,
+					CreatedAt = DateTime.UtcNow
+				};
 
-				wallet.Balance += payment.Amount;
+				await _unitOfWork.TransactionRepository.AddAsync(transaction);
 			}
 
 			await _unitOfWork.SaveChangesAsync();
@@ -139,34 +107,14 @@ namespace CraftiqueBE.Service.Services
 			return await UpdatePaymentStatusAsync(payment.PaymentId, newStatus);
 		}
 
-		private async Task<Wallet> EnsureWalletExistsAsync(string userId)
+		public async Task<List<TransactionViewModel>> GetTransactionsByUserIdAsync(string userId)
 		{
-			var wallet = await _unitOfWork.WalletRepository
-				.GetAllQueryable()
-				.FirstOrDefaultAsync(w => w.UserId == userId);
+			var transactions = await _unitOfWork.TransactionRepository
+				.GetAllAsync(t => t.Payment.UserId == userId, t => t.Payment);
 
-			if (wallet == null)
-			{
-				wallet = new Wallet
-				{
-					UserId = userId,
-					Balance = 0,
-					CreatedAt = DateTime.UtcNow,
-					IsDeleted = false
-				};
-
-				await _unitOfWork.WalletRepository.AddAsync(wallet);
-				await _unitOfWork.SaveChangesAsync();
-			}
-
-			return wallet;
+			var result = _mapper.Map<List<TransactionViewModel>>(transactions.OrderByDescending(t => t.CreatedAt).ToList());
+			return result;
 		}
 
-		private string CreateSHA256Signature(string data, string key)
-		{
-			using var hmac = new System.Security.Cryptography.HMACSHA256(Encoding.UTF8.GetBytes(key));
-			var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(data));
-			return BitConverter.ToString(hash).Replace("-", "").ToLower();
-		}
 	}
 }

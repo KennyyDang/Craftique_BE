@@ -4,6 +4,7 @@ using CraftiqueBE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CraftiqueBE.Data.Migrations
 {
     [DbContext(typeof(CraftiqueDBContext))]
-    partial class CraftiqueDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250619095223_AddTransactionTable")]
+    partial class AddTransactionTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -442,45 +445,6 @@ namespace CraftiqueBE.Data.Migrations
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("CraftiqueBE.Data.Entities.PaymentTransaction", b =>
-                {
-                    b.Property<int>("TransactionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionId"));
-
-                    b.Property<decimal>("Amount")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("PaymentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TransactionId");
-
-                    b.HasIndex("PaymentId");
-
-                    b.ToTable("Transactions");
-                });
-
             modelBuilder.Entity("CraftiqueBE.Data.Entities.ProductImg", b =>
                 {
                     b.Property<int>("ProductImgID")
@@ -673,6 +637,44 @@ namespace CraftiqueBE.Data.Migrations
                     b.HasKey("ShippingMethodID");
 
                     b.ToTable("ShippingMethods");
+                });
+
+            modelBuilder.Entity("CraftiqueBE.Data.Entities.Transaction", b =>
+                {
+                    b.Property<int>("TransactionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionId"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PaymentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TransactionId");
+
+                    b.HasIndex("PaymentId");
+
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("CraftiqueBE.Data.Entities.User", b =>
@@ -1175,17 +1177,6 @@ namespace CraftiqueBE.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CraftiqueBE.Data.Entities.PaymentTransaction", b =>
-                {
-                    b.HasOne("CraftiqueBE.Data.Entities.Payment", "Payment")
-                        .WithMany()
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Payment");
-                });
-
             modelBuilder.Entity("CraftiqueBE.Data.Entities.ProductImg", b =>
                 {
                     b.HasOne("CraftiqueBE.Data.Entities.ProductItem", "ProductItem")
@@ -1259,6 +1250,17 @@ namespace CraftiqueBE.Data.Migrations
                     b.Navigation("Shipper");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CraftiqueBE.Data.Entities.Transaction", b =>
+                {
+                    b.HasOne("CraftiqueBE.Data.Entities.Payment", "Payment")
+                        .WithMany()
+                        .HasForeignKey("PaymentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Payment");
                 });
 
             modelBuilder.Entity("CraftiqueBE.Data.Entities.User", b =>
