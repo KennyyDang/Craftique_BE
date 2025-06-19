@@ -30,6 +30,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using AutoMapper;
 using CraftiqueBE.Data.ViewModels.WalletVM;
 using CraftiqueBE.Data.Models.WalletModel;
+using CraftiqueBE.Data.ViewModels.PaymentVM;
 
 namespace CraftiqueBE.Data.Mapping
 {
@@ -135,9 +136,7 @@ namespace CraftiqueBE.Data.Mapping
 			CreateMap<Order, OrderViewModel>()
 				.ForMember(dest => dest.OrderDetails, opt => opt.MapFrom(src => src.OrderDetails));
 
-			CreateMap<OrderDetail, OrderDetailViewModel>();
-
-			CreateMap<Wallet, WalletViewModel>();
+			CreateMap<OrderDetail, OrderDetailViewModel>();	
 
 			CreateMap<Payment, PaymentViewModel>();
 
@@ -147,7 +146,7 @@ namespace CraftiqueBE.Data.Mapping
 				.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
 			CreateMap<UpdatePaymentModel, Payment>();
 
-			CreateMap<WalletTransaction, WalletTransactionViewModel>();
+			CreateMap<PaymentTransaction, TransactionViewModel>().ReverseMap();
 		}
 	}
 }

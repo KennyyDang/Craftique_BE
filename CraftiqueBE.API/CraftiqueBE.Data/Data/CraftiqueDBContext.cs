@@ -37,9 +37,8 @@ namespace CraftiqueBE.Data
 		public DbSet<UserBlogView> UserBlogViews { get; set; }
 		public DbSet<Voucher> Vouchers { get; set; }
 		public DbSet<Role> Roles { get; set; }
-		public DbSet<Wallet> Wallets { get; set; }
-		public DbSet<WalletTransaction> WalletTransactions { get; set; }
 		public DbSet<Payment> Payments { get; set; }
+		public DbSet<PaymentTransaction> Transactions { get; set; }	
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -201,13 +200,10 @@ namespace CraftiqueBE.Data
 				.Property(p => p.Amount)
 				.HasPrecision(18, 2);
 
-			modelBuilder.Entity<Wallet>()
-				.Property(w => w.Balance)
-				.HasPrecision(18, 2);
-
-			modelBuilder.Entity<WalletTransaction>()
+			modelBuilder.Entity<PaymentTransaction>()
 				.Property(t => t.Amount)
 				.HasPrecision(18, 2);
+
 		}
 
 	}

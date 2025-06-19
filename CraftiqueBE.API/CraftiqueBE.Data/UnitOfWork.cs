@@ -32,9 +32,8 @@ namespace CraftiqueBE.Data
 		private readonly IRepository<OrderDetail> _orderDetailRepository;
 		private readonly IRepository<User> _userRepository;
 		private readonly IRepository<Entities.Notification> _notificationRepository;
-		private readonly IRepository<Wallet> _walletRepository;
-		private readonly IRepository<WalletTransaction> _walletTransactionRepository;
 		private readonly IRepository<Payment> _paymentRepository;
+		private readonly IRepository<PaymentTransaction> _transactionRepository;
 
 		public UnitOfWork(
 			CraftiqueDBContext dbContext,
@@ -54,8 +53,7 @@ namespace CraftiqueBE.Data
 			IRepository<Order> orderRepository,
 			IRepository<OrderDetail> orderDetailRepository,
 			IRepository<Entities.Notification> notificationRepository,
-			IRepository<Wallet> walletRepository,
-			IRepository<WalletTransaction> walletTransactionRepository,
+			IRepository<PaymentTransaction> transactionRepository,
 			IRepository<Payment> paymentRepository
 		)
 		{
@@ -76,9 +74,8 @@ namespace CraftiqueBE.Data
 			_orderRepository = orderRepository;
 			_orderDetailRepository = orderDetailRepository;
 			_notificationRepository = notificationRepository;
-			_walletRepository = walletRepository;
-			_walletTransactionRepository = walletTransactionRepository;
 			_paymentRepository = paymentRepository;
+			_transactionRepository = transactionRepository;
 		}
 
 		// 🔹 Repository getter
@@ -97,12 +94,10 @@ namespace CraftiqueBE.Data
 		public IRepository<Order> OrderRepository => _orderRepository;
 		public IRepository<OrderDetail> OrderDetailRepository => _orderDetailRepository;
 		public IRepository<Entities.Notification> NotificationRepository => _notificationRepository;
-		public IRepository<Wallet> WalletRepository => _walletRepository;
-		public IRepository<WalletTransaction> WalletTransactionRepository => _walletTransactionRepository;
-
 		public IRepository<User> UserRepository => _userRepository;
 
 		public IRepository<Payment> PaymentRepository => _paymentRepository;
+		public IRepository<PaymentTransaction> TransactionRepository => _transactionRepository;	
 
 		// 🔹 Transaction - Dùng async để tránh block luồng
 		public async Task BeginTransactionAsync()

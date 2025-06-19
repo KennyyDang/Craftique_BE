@@ -4,6 +4,7 @@ using CraftiqueBE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CraftiqueBE.Data.Migrations
 {
     [DbContext(typeof(CraftiqueDBContext))]
-    partial class CraftiqueDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250619090038_RemoveWallet")]
+    partial class RemoveWallet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -440,45 +443,6 @@ namespace CraftiqueBE.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Payments");
-                });
-
-            modelBuilder.Entity("CraftiqueBE.Data.Entities.PaymentTransaction", b =>
-                {
-                    b.Property<int>("TransactionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionId"));
-
-                    b.Property<decimal>("Amount")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("PaymentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TransactionId");
-
-                    b.HasIndex("PaymentId");
-
-                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("CraftiqueBE.Data.Entities.ProductImg", b =>
@@ -1173,17 +1137,6 @@ namespace CraftiqueBE.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("CraftiqueBE.Data.Entities.PaymentTransaction", b =>
-                {
-                    b.HasOne("CraftiqueBE.Data.Entities.Payment", "Payment")
-                        .WithMany()
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Payment");
                 });
 
             modelBuilder.Entity("CraftiqueBE.Data.Entities.ProductImg", b =>

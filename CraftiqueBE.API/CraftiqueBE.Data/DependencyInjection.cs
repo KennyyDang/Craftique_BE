@@ -20,6 +20,7 @@ namespace CraftiqueBE.Data
 			service.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 			service.AddScoped<IRepository<User>, Repository<User>>();
 			service.AddScoped<IRepository<Payment>, Repository<Payment>>();
+			service.AddScoped<IRepository<PaymentTransaction>, Repository<PaymentTransaction>>();
 			service.Configure<EmailConfiguration>(configuration.GetSection("MailSettings"));
 			service.AddScoped<IEmailHelper, EmailHelper>();
 			return service;
