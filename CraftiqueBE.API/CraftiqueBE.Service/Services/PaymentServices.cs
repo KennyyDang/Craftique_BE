@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Net.payOS;
 using Net.payOS.Types;
+using System.Text.Json;
 
 namespace CraftiqueBE.Service.Services
 {
@@ -31,7 +32,7 @@ namespace CraftiqueBE.Service.Services
 		public async Task<PaymentViewModel> CreatePaymentAsync(CreatePaymentModel model, string userId)
 		{
 			var orderCode = DateTimeOffset.UtcNow.ToUnixTimeSeconds(); // PayOS yêu cầu dạng số
-			var description = "Thanh toán đơn hàng trên Craftique";
+			var description = "Thanh toán đơn hàng";
 
 			var items = new List<ItemData>
 			{
@@ -46,8 +47,9 @@ namespace CraftiqueBE.Service.Services
 				returnUrl: _payos.ReturnUrl,
 				cancelUrl: _payos.CancelUrl
 			);
-
+			Console.WriteLine("Payment Data: " + JsonSerializer.Serialize(paymentData));
 			var result = await _payosSdk.createPaymentLink(paymentData);
+			Console.WriteLine("PayOS Result: " + result.checkoutUrl);
 
 			var payment = new Payment
 			{
