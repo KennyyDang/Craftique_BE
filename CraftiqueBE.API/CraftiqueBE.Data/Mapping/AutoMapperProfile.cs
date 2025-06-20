@@ -31,6 +31,8 @@ using AutoMapper;
 using CraftiqueBE.Data.ViewModels.WalletVM;
 using CraftiqueBE.Data.Models.WalletModel;
 using CraftiqueBE.Data.ViewModels.PaymentVM;
+using CraftiqueBE.Data.ViewModels.UserDesignUploadVM;
+using CraftiqueBE.Data.Models.DesignUploadModel;
 
 namespace CraftiqueBE.Data.Mapping
 {
@@ -147,6 +149,15 @@ namespace CraftiqueBE.Data.Mapping
 			CreateMap<UpdatePaymentModel, Payment>();
 
 			CreateMap<PaymentTransaction, TransactionViewModel>().ReverseMap();
+
+			CreateMap<UserDesignUpload, DesignUploadViewModel>().ReverseMap();
+
+			CreateMap<ProductCustomization, CustomizationViewModel>()
+			.ForMember(dest => dest.FileUrl, opt => opt.MapFrom(src =>
+				src.UserDesignUpload != null ? src.UserDesignUpload.FileUrl : null));
+
+			CreateMap<CreateCustomizationModel, ProductCustomization>()
+				.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
 		}
 	}
 }

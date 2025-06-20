@@ -23,6 +23,8 @@ namespace CraftiqueBE.Data
 		private readonly IRepository<Product> _productRepository;
 		private readonly IRepository<ProductItem> _productItemRepository;
 		private readonly IRepository<ProductImg> _productImgRepository;
+		private readonly IRepository<UserDesignUpload> _userDesignUploadRepository;
+		private readonly IRepository<ProductCustomization> _productCustomizationRepository;
 		private readonly IRepository<BlogImage> _blogImageRepository;
 		private readonly IRepository<Review> _reviewRepository;
 		private readonly IRepository<ChatRoom> _chatRoomRepository;
@@ -45,6 +47,8 @@ namespace CraftiqueBE.Data
 			IRepository<ProductItem> productItemRepository,
 			IRepository<Product> productRepository,
 			IRepository<ProductImg> productImgRepository,
+			IRepository<UserDesignUpload> userDesignUploadRepository,
+			IRepository<ProductCustomization> productCustomizationRepository,
 			IRepository<BlogImage> blogImageRepository,
 			IRepository<Review> reviewRepository,
 			IRepository<ChatRoom> chatRoomRepository,
@@ -66,6 +70,8 @@ namespace CraftiqueBE.Data
 			_productItemRepository = productItemRepository;
 			_productRepository = productRepository;
 			_productImgRepository = productImgRepository;
+			_userDesignUploadRepository = userDesignUploadRepository;
+			_productCustomizationRepository = productCustomizationRepository;
 			_blogImageRepository = blogImageRepository;
 			_reviewRepository = reviewRepository;
 			_chatRoomRepository = chatRoomRepository;
@@ -86,6 +92,8 @@ namespace CraftiqueBE.Data
 		public IRepository<ProductItem> ProductItemRepository => _productItemRepository;
 		public IRepository<Product> ProductRepository => _productRepository;
 		public IRepository<ProductImg> ProductImgRepository => _productImgRepository;
+		public IRepository<UserDesignUpload> UserDesignUploadRepository => _userDesignUploadRepository;
+		public IRepository<ProductCustomization> ProductCustomizationRepository => _productCustomizationRepository;
 		public IRepository<BlogImage> BlogImageRepository => _blogImageRepository;
 		public IRepository<Review> ReviewRepository => _reviewRepository;
 		public IRepository<ChatRoom> ChatRoomRepository => _chatRoomRepository;

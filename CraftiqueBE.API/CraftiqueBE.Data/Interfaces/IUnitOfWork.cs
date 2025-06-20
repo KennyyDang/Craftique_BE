@@ -23,6 +23,8 @@ namespace CraftiqueBE.Data.Interfaces
 		IRepository<ProductItemAttribute> ProductItemAttributeRepository { get; }
 		IRepository<ProductItem> ProductItemRepository { get; }
 		IRepository<Product> ProductRepository { get; }
+		IRepository<UserDesignUpload> UserDesignUploadRepository { get; }
+		IRepository<ProductCustomization> ProductCustomizationRepository { get; }
 		IRepository<Review> ReviewRepository { get; }
 		IRepository<User> UserRepository { get; }
 		IRepository<Entities.Notification> NotificationRepository { get; }
