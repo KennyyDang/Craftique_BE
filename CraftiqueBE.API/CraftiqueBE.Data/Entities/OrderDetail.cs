@@ -33,5 +33,8 @@ namespace CraftiqueBE.Data.Entities
 		public ProductItem ProductItem { get; set; }
 		public Order Order { get; set; }
 		public virtual ICollection<Review> Reviews { get; set; }
+		[ForeignKey("ProductCustomization")]
+		public int? ProductCustomizationID { get; set; }
+		public virtual ProductCustomization ProductCustomization { get; set; }
 	}
 }
