@@ -36,12 +36,12 @@ namespace CraftiqueBE.Service.Services
 
 			var items = new List<ItemData>
 			{
-				new ItemData("Sản phẩm Craftique", 1, (int)(model.Amount * 1000)) // giá phải * 1000
+				new ItemData("Sản phẩm Craftique", 1, (int)(model.Amount)) // giá phải * 1000
             };
 
 			var paymentData = new PaymentData(
 				orderCode: orderCode,
-				amount: (int)(model.Amount * 1000),
+				amount: (int)(model.Amount),
 				description: description,
 				items: items,
 				returnUrl: _payos.ReturnUrl,

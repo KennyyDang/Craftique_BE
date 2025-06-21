@@ -128,7 +128,8 @@ namespace CraftiqueBE.Service.Services
 			{
 				AccessToken = accessToken,
 				RefreshToken = refreshToken,
-				UserName = user.UserName,
+                UserID = user.Id,
+                UserName = user.UserName,
 				Name = user.Name,
 			};
 		}
