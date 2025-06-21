@@ -1,27 +1,31 @@
-# Ignore Visual Studio files
-.vs/
-*.user
-*.suo
-*.cache
+# Visual Studio Code workspace
+.vscode/
 
-# Ignore build output
-bin/
-obj/
+# Rider IDE
+.idea/
+
+# Build results
 *.dll
 *.exe
-*.pdb
+*.app
 *.log
+*.db
+*.json
+*.suo
+*.user
+*.sdf
 *.cache
+*.pdb
 
-# Ignore NuGet packages
-*.nupkg
-*.snupkg
-*.nuspec
-packages/
-*.props
-*.targets
+# VS & dotnet temp folders
+.vs/
+obj/
+bin/
+TestResults/
+*.csproj.user
 
-# Ignore others
-*.backup.json
-*.DS_Store
+# Others
 *.vscode/
+*.backup.json
+*.tmp
+*.bak
