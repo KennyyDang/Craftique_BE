@@ -33,6 +33,8 @@ using CraftiqueBE.Data.Models.WalletModel;
 using CraftiqueBE.Data.ViewModels.PaymentVM;
 using CraftiqueBE.Data.ViewModels.UserDesignUploadVM;
 using CraftiqueBE.Data.Models.DesignUploadModel;
+using CraftiqueBE.Data.Models.WorkshopRegistrationModel;
+using CraftiqueBE.Data.ViewModels.WorkshopRegistrationVM;
 
 namespace CraftiqueBE.Data.Mapping
 {
@@ -158,6 +160,14 @@ namespace CraftiqueBE.Data.Mapping
 
 			CreateMap<CreateCustomizationModel, ProductCustomization>()
 				.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
+
+			CreateMap<WorkshopRegistration, WorkshopRegistrationViewModel>().ReverseMap();
+
+			CreateMap<CreateWorkshopRegistrationModel, WorkshopRegistration>()
+				.ForMember(dest => dest.RegisteredDate, opt => opt.MapFrom(_ => DateTime.UtcNow))
+				.ForMember(dest => dest.Status, opt => opt.MapFrom(_ => "CHỜ XÁC NHẬN"))
+				.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
+
 		}
 	}
 }

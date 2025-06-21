@@ -30,6 +30,7 @@ namespace CraftiqueBE.Data.Interfaces
 		IRepository<Entities.Notification> NotificationRepository { get; }
 		IRepository<Payment> PaymentRepository { get; }
 		IRepository<PaymentTransaction> TransactionRepository { get; }
+		IRepository<WorkshopRegistration> WorkshopRegistrationRepository { get; }
 
 		Task BeginTransactionAsync();
 		Task CommitTransactionAsync();

@@ -36,6 +36,7 @@ namespace CraftiqueBE.Data
 		private readonly IRepository<Entities.Notification> _notificationRepository;
 		private readonly IRepository<Payment> _paymentRepository;
 		private readonly IRepository<PaymentTransaction> _transactionRepository;
+		private readonly IRepository<WorkshopRegistration> _workshopRegistrationRepository;
 
 		public UnitOfWork(
 			CraftiqueDBContext dbContext,
@@ -58,7 +59,8 @@ namespace CraftiqueBE.Data
 			IRepository<OrderDetail> orderDetailRepository,
 			IRepository<Entities.Notification> notificationRepository,
 			IRepository<PaymentTransaction> transactionRepository,
-			IRepository<Payment> paymentRepository
+			IRepository<Payment> paymentRepository,
+			IRepository<WorkshopRegistration> workshopRegistrationRepository
 		)
 		{
 			_dbContext = dbContext;
@@ -82,6 +84,7 @@ namespace CraftiqueBE.Data
 			_notificationRepository = notificationRepository;
 			_paymentRepository = paymentRepository;
 			_transactionRepository = transactionRepository;
+			_workshopRegistrationRepository = workshopRegistrationRepository;
 		}
 
 		// 🔹 Repository getter
@@ -106,6 +109,7 @@ namespace CraftiqueBE.Data
 
 		public IRepository<Payment> PaymentRepository => _paymentRepository;
 		public IRepository<PaymentTransaction> TransactionRepository => _transactionRepository;	
+		public IRepository<WorkshopRegistration> WorkshopRegistrationRepository => _workshopRegistrationRepository;
 
 		// 🔹 Transaction - Dùng async để tránh block luồng
 		public async Task BeginTransactionAsync()
