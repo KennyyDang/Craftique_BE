@@ -1,31 +1,55 @@
-# Visual Studio Code workspace
-.vscode/
-
-# Rider IDE
-.idea/
-
-# Build results
-*.dll
-*.exe
-*.app
-*.log
-*.db
-*.json
-*.suo
+# =========================
+# 👉 Visual Studio / .NET
+# =========================
+.vs/
 *.user
-*.sdf
+*.suo
 *.cache
 *.pdb
-
-# VS & dotnet temp folders
-.vs/
-obj/
-bin/
-TestResults/
 *.csproj.user
-
-# Others
-*.vscode/
-*.backup.json
+*.db
+*.log
 *.tmp
 *.bak
+*.backup.json
+*.dbmdl
+*.dbschema
+TestResults/
+
+# Build output
+bin/
+obj/
+artifacts/
+
+# Auto-generated files
+project.lock.json
+project.fragment.lock.json
+*.nuget.props
+*.nuget.targets
+
+# =========================
+# 👉 VS Code
+# =========================
+.vscode/
+
+# =========================
+# 👉 Rider (JetBrains)
+# =========================
+.idea/
+
+# =========================
+# 👉 OS-specific
+# =========================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# =========================
+# 👉 Frontend (nếu có)
+# =========================
+node_modules/
+dist/
