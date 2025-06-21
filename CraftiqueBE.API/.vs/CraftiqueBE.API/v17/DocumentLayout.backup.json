@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|f:\\exe202\\craftique_be\\craftiquebe.api\\craftiquebe.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|f:\\exe202\\craftique_be\\craftiquebe.api\\craftiquebe.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|f:\\exe202\\craftique_be\\craftiquebe.api\\craftiquebe.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|f:\\exe202\\craftique_be\\craftiquebe.api\\craftiquebe.api\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{944AB463-F43A-4B8A-8AD3-3145CAFC8229}|CraftiqueBE.API\\CraftiqueBE.API.csproj|solutionrelative:craftiquebe.api\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40B54489-8B73-44DB-9741-BCBF6AF5B2B3}|CraftiqueBE.Service\\CraftiqueBE.Service.csproj|f:\\exe202\\craftique_be\\craftiquebe.api\\craftiquebe.service\\services\\paymentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40B54489-8B73-44DB-9741-BCBF6AF5B2B3}|CraftiqueBE.Service\\CraftiqueBE.Service.csproj|solutionrelative:craftiquebe.service\\services\\paymentservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{40B54489-8B73-44DB-9741-BCBF6AF5B2B3}|CraftiqueBE.Service\\CraftiqueBE.Service.csproj|f:\\exe202\\craftique_be\\craftiquebe.api\\craftiquebe.service\\services\\accountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40B54489-8B73-44DB-9741-BCBF6AF5B2B3}|CraftiqueBE.Service\\CraftiqueBE.Service.csproj|solutionrelative:craftiquebe.service\\services\\accountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,12 +43,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\appsettings.json",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\appsettings.json",
+              "ToolTip": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\appsettings.json",
+              "RelativeToolTip": "CraftiqueBE.API\\appsettings.json",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwCIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-21T05:14:38.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\Properties\\launchSettings.json",
+              "ToolTip": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "CraftiqueBE.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-21T05:14:09.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Program.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\Program.cs",
+              "ToolTip": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Program.cs",
+              "RelativeToolTip": "CraftiqueBE.API\\Program.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T05:13:55.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.API\\Controllers\\PaymentController.cs",
+              "ToolTip": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.API\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "CraftiqueBE.API\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T05:13:18.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaymentServices.cs",
+              "DocumentMoniker": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\PaymentServices.cs",
+              "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\PaymentServices.cs",
+              "ToolTip": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\PaymentServices.cs",
+              "RelativeToolTip": "CraftiqueBE.Service\\Services\\PaymentServices.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowGgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T04:53:09.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AccountServices.cs",
               "DocumentMoniker": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\AccountServices.cs",
               "RelativeDocumentMoniker": "CraftiqueBE.Service\\Services\\AccountServices.cs",
               "ToolTip": "F:\\EXE202\\Craftique_BE\\CraftiqueBE.API\\CraftiqueBE.Service\\Services\\AccountServices.cs",
               "RelativeToolTip": "CraftiqueBE.Service\\Services\\AccountServices.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAwwHAAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAIIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-21T04:38:47.448Z",
               "EditorCaption": ""
