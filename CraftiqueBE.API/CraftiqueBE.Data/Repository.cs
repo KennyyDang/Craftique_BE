@@ -69,7 +69,7 @@ namespace CraftiqueBE.Data
 				query = query.OrderBy(lambda);
 			}
 
-			return await query.ToListAsync();
+		return await query.ToListAsync();
 		}
 
 		public IQueryable<TEntity> GetAllQueryable()
