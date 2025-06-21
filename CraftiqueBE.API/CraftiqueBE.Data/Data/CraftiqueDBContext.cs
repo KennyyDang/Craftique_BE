@@ -40,7 +40,8 @@ namespace CraftiqueBE.Data
 		public DbSet<Voucher> Vouchers { get; set; }
 		public DbSet<Role> Roles { get; set; }
 		public DbSet<Payment> Payments { get; set; }
-		public DbSet<PaymentTransaction> Transactions { get; set; }	
+		public DbSet<PaymentTransaction> Transactions { get; set; }
+		public DbSet<WorkshopRegistration> WorkshopRegistrations { get; set; }
 
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

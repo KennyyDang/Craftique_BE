@@ -35,7 +35,8 @@ namespace CraftiqueBE.Service
 			service.AddScoped<IChatServices, ChatServices>();
 			service.AddScoped<ICategoryServices, CategoryServices>();
 			service.AddScoped<IPaymentServices, PaymentServices>(); 
-	
+			service.AddScoped<IWorkshopServices, WorkshopServices>();
+
 			return service;
 		}
 	}
