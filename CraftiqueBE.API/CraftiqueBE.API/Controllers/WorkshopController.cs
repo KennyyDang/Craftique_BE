@@ -68,5 +68,20 @@ namespace CraftiqueBE.API.Controllers
 
 			return BadRequest("Xác nhận thất bại.");
 		}
+
+		// ✅ POST: /api/workshop/reject/{id}?reason=... - Admin từ chối người đăng ký
+		[HttpPost("reject/{id}")]
+		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}")]
+		public async Task<IActionResult> Reject(int id, [FromQuery] string reason)
+		{
+			if (string.IsNullOrWhiteSpace(reason))
+				return BadRequest("Lý do từ chối không được để trống.");
+
+			var success = await _workshopService.RejectAsync(id, reason);
+			if (success)
+				return Ok(new { message = "Từ chối thành công và đã gửi email thông báo." });
+
+			return BadRequest("Từ chối thất bại.");
+		}
 	}
 }
