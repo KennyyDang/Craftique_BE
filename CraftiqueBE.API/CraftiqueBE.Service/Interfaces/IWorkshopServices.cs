@@ -15,5 +15,6 @@ namespace CraftiqueBE.Service.Interfaces
 		Task SendEmailAsync(int registrationId, string subject, string body);
 		Task SendEmailBulkAsync(List<int> registrationIds, string subject, string body);
 		Task<bool> ConfirmAsync(int registrationId);
+		Task<bool> RejectAsync (int registrationId, string reason);
 	}
 }
