@@ -199,6 +199,7 @@ namespace CraftiqueBE.API
 			{
 				var services = scope.ServiceProvider;
 				var context = services.GetRequiredService<CraftiqueDBContext>();
+				context.Database.Migrate();
 				var userManager = services.GetRequiredService<UserManager<User>>();
 				var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
