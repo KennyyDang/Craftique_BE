@@ -251,7 +251,7 @@ namespace CraftiqueBE.Service.Services
 				{ OrderStatusHelper.Processing, new List<string> { OrderStatusHelper.Shipped } },
 				{ OrderStatusHelper.Shipped, new List<string> { OrderStatusHelper.Delivered } },
 				{ OrderStatusHelper.Delivered, new List<string> { OrderStatusHelper.Completed, OrderStatusHelper.RefundRequested } }
-				//{ OrderStatusHelper.RefundRequested, new List<string> { OrderStatusHelper.Refunded } }
+				
 			};
 
 			if (!validTransitions.ContainsKey(order.OrderStatus) || !validTransitions[order.OrderStatus].Contains(newStatus))
@@ -273,20 +273,6 @@ namespace CraftiqueBE.Service.Services
 
 				await AssignShipperToOrder(order, shipperId);
 			}
-			//else if (order.OrderStatus == OrderStatusHelper.RefundRequested && newStatus == OrderStatusHelper.Refunded)
-			//{
-			//	if (order.PaymentMethod == "PayPal")
-			//	{
-			//		//todo
-			//		bool refundSuccess = await ProcessPayPalRefund(order);
-			//		if (!refundSuccess)
-			//		{
-			//			throw new InvalidOperationException("PayPal refund failed.");
-			//		}
-			//	}
-
-			//	await RestoreProductStock(order.OrderID);
-			//}
 
 			order.OrderStatus = newStatus;
 		}
@@ -358,23 +344,45 @@ namespace CraftiqueBE.Service.Services
 
 		}
 
-		//todo
-		//private async Task<bool> ProcessPayPalRefund(Order order)
-		//{
-		//	try
-		//	{
-		//		//var paypalService = new PayPalService(); // Giả sử có class tích hợp PayPal
-		//		//bool refundSuccess = await paypalService.RefundPayment(order.PaymentTransactionId, order.Total);
+		public async Task<OrderStatisticsViewModel> GetOrderStatisticsAsync()
+		{
+			var endDate = DateTime.UtcNow; // Ngày hiện tại
+			var startDate = endDate.AddMonths(-11); // 12 tháng trước
 
-		//		//return refundSuccess;
-		//		return true;
-		//	}
-		//	catch (Exception ex)
-		//	{
-		//		Console.WriteLine($"PayPal refund error: {ex.Message}");
-		//		return false;
-		//	}
-		//}
+			// Truy vấn đơn hàng trong 12 tháng, nhóm theo năm và tháng
+			var statistics = await _unitOfWork.OrderRepository.GetAllQueryable()
+				.Where(o => o.OrderDate >= startDate && o.OrderDate <= endDate && !o.IsDeleted)
+				.GroupBy(o => new { o.OrderDate.Year, o.OrderDate.Month })
+				.Select(g => new
+				{
+					Year = g.Key.Year,
+					Month = g.Key.Month,
+					OrderCount = g.Count(),
+					TotalAmount = g.Sum(o => o.Total)
+				})
+				.OrderBy(s => s.Year).ThenBy(s => s.Month)
+				.ToListAsync();
+
+			// Tạo danh sách đầy đủ cho 12 tháng
+			var result = new List<(int Year, int Month, int OrderCount, double TotalAmount)>();
+			for (int i = 0; i < 12; i++)
+			{
+				var currentMonth = startDate.AddMonths(i);
+				var stat = statistics.FirstOrDefault(s => s.Year == currentMonth.Year && s.Month == currentMonth.Month)
+					?? new { Year = currentMonth.Year, Month = currentMonth.Month, OrderCount = 0, TotalAmount = 0.0 };
+				result.Add((stat.Year, stat.Month, stat.OrderCount, stat.TotalAmount));
+			}
+
+			// Chuyển đổi sang ViewModel
+			var viewModel = new OrderStatisticsViewModel
+			{
+				Labels = result.Select(r => new DateTime(r.Year, r.Month, 1).ToString("MMM yyyy")).ToArray(),
+				OrderCounts = result.Select(r => r.OrderCount).ToArray(),
+				TotalAmounts = result.Select(r => r.TotalAmount).ToArray()
+			};
+
+			return viewModel;
+		}
 
 	}
 }
