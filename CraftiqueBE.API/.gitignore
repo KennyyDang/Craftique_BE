@@ -14,7 +14,6 @@
 *.backup.json
 *.dbmdl
 *.dbschema
-*.env
 TestResults/
 
 # Build output
