@@ -31,9 +31,16 @@ namespace CraftiqueBE.Service.Services
 				if (user == null)
 					throw new KeyNotFoundException($"User with ID {review.UserID} not found.");
 
-				var productItem = await _unitOfWork.ProductItemRepository.GetByIdAsync(review.ProductItemID);
-				if (productItem == null)
-					throw new KeyNotFoundException($"ProductItem with ID {review.ProductItemID} not found.");
+				ProductItem productItem = null;
+
+				// ➤ Chỉ check khi có ProductItemID
+				if (review.ProductItemID.HasValue)
+				{
+					productItem = await _unitOfWork.ProductItemRepository.GetByIdAsync(review.ProductItemID.Value);
+
+					if (productItem == null)
+						throw new KeyNotFoundException($"ProductItem with ID {review.ProductItemID} not found.");
+				}
 
 				var orderDetail = await _unitOfWork.OrderDetailRepository.GetByIdAsync(review.OrderDetailID);
 				if (orderDetail == null)
@@ -232,14 +239,15 @@ namespace CraftiqueBE.Service.Services
 				return new Dictionary<int, (double, int)>();
 
 			var result = reviews
-				.GroupBy(r => r.ProductItemID)
-				.ToDictionary(
-					g => g.Key,
-					g => (
-						AverageRating: Math.Round(g.Average(r => r.ProductRating.Value), 1),
-						TotalReviewers: g.Count()
-					)
-				);
+			.Where(r => r.ProductItemID.HasValue)  // Bỏ các review không có ProductItemID
+			.GroupBy(r => r.ProductItemID.Value)   // Ép về int
+			.ToDictionary(
+				g => g.Key,
+				g => (
+					AverageRating: Math.Round(g.Average(r => r.ProductRating.Value), 1),
+					TotalReviewers: g.Count()
+				)
+			);
 
 			return result;
 		}

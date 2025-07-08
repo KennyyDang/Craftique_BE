@@ -17,5 +17,6 @@ namespace CraftiqueBE.Service.Interfaces
 		Task<object> GetOrdersAsync(Guid? userId, string? status, TimeModel model, string userRole, Guid currentUserId);
 		Task<bool> UpdateOrderStatusAsync(int orderId, string newStatus, User user, string? shipperId = null);
 		Task<OrderStatisticsViewModel> GetOrderStatisticsAsync();
+		Task<Order> AddCustomProductOrderAsync(OrderCustomProductRequestModel model, String userId);
 	}
 }

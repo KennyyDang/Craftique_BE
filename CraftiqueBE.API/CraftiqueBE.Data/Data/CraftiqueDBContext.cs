@@ -31,8 +31,6 @@ namespace CraftiqueBE.Data
 		public DbSet<ProductImg> ProductImgs { get; set; }
 		public DbSet<ProductItem> ProductItems { get; set; }
 		public DbSet<ProductItemAttribute> ProductItemAttributes { get; set; }
-		public DbSet<UserDesignUpload> UserDesignUploads { get; set; }
-		public DbSet<ProductCustomization> ProductCustomizations { get; set; }
 		public DbSet<Review> Reviews { get; set; }
 		public DbSet<ShippingMethod> ShippingMethods { get; set; }
 		public DbSet<User> Users { get; set; }
@@ -42,6 +40,8 @@ namespace CraftiqueBE.Data
 		public DbSet<Payment> Payments { get; set; }
 		public DbSet<PaymentTransaction> Transactions { get; set; }
 		public DbSet<WorkshopRegistration> WorkshopRegistrations { get; set; }
+		public DbSet<CustomProduct> CustomProducts { get; set; }
+		public DbSet<CustomProductFile> CustomProductFiles { get; set; }
 
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -207,26 +207,28 @@ namespace CraftiqueBE.Data
 			modelBuilder.Entity<PaymentTransaction>()
 				.Property(t => t.Amount)
 				.HasPrecision(18, 2);
-			modelBuilder.Entity<ProductCustomization>()
-				.HasOne(pc => pc.ProductItem)
-				.WithMany()
-				.HasForeignKey(pc => pc.ProductItemID)
+
+			modelBuilder.Entity<CustomProductFile>()
+				.HasOne(f => f.CustomProduct)
+				.WithMany(cp => cp.CustomProductFiles)
+				.HasForeignKey(f => f.CustomProductID)
+				.OnDelete(DeleteBehavior.Cascade);
+
+			modelBuilder.Entity<CustomProduct>()
+				.HasOne(cp => cp.Product)
+				.WithMany(p => p.CustomProducts)
+				.HasForeignKey(cp => cp.ProductID)
 				.OnDelete(DeleteBehavior.Restrict);
 
-			modelBuilder.Entity<ProductCustomization>()
-				.HasOne(pc => pc.UserDesignUpload)
-				.WithMany()
-				.HasForeignKey(pc => pc.UserDesignUploadID)
-				.OnDelete(DeleteBehavior.SetNull); // ảnh bị xoá thì giữ lại thiết kế
+			modelBuilder.Entity<CustomProduct>()
+				.Property(p => p.Price)
+				.HasPrecision(18, 2);
 
 			modelBuilder.Entity<OrderDetail>()
-				.HasOne(od => od.ProductCustomization)
+				.HasOne(od => od.CustomProductFile)
 				.WithMany()
-				.HasForeignKey(od => od.ProductCustomizationID)
-				.OnDelete(DeleteBehavior.SetNull);
+				.HasForeignKey(od => od.CustomProductFileID)
+				.OnDelete(DeleteBehavior.Restrict);
 		}
-
 	}
-
-
 }

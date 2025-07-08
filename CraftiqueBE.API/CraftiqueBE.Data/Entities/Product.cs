@@ -36,5 +36,6 @@ namespace CraftiqueBE.Data.Models
 		public virtual ICollection<ProductItem> ProductItems { get; set; }
 		public virtual ICollection<Blog> Blogs { get; set; }
 		public virtual ICollection<Voucher> Vouchers { get; set; }
+		public virtual ICollection<CustomProduct> CustomProducts { get; set; }
 	}
 }

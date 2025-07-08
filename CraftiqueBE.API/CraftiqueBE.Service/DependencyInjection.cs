@@ -27,7 +27,6 @@ namespace CraftiqueBE.Service
 			service.AddScoped<IProductItemServices, ProductItemServices>();
 			service.AddScoped<IProductItemAttributeServices, ProductItemAttributeServices>();
 			service.AddScoped<IProductImgServices, ProductImgServices>();
-			service.AddScoped<IDesignService, DesignService>();
 			service.AddScoped<IBlogServices, BlogServices>();
 			service.AddScoped<ICategoryServices, CategoryServices>();
 			service.AddScoped<IReviewServices, ReviewServices>();
@@ -36,6 +35,8 @@ namespace CraftiqueBE.Service
 			service.AddScoped<ICategoryServices, CategoryServices>();
 			service.AddScoped<IPaymentServices, PaymentServices>(); 
 			service.AddScoped<IWorkshopServices, WorkshopServices>();
+			service.AddScoped<ICustomProductService, CustomProductService>();
+			service.AddScoped<ICustomProductFileService, CustomProductFileService>();
 
 			return service;
 		}

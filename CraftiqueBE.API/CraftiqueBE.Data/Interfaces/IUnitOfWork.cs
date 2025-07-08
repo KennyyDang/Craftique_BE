@@ -23,14 +23,14 @@ namespace CraftiqueBE.Data.Interfaces
 		IRepository<ProductItemAttribute> ProductItemAttributeRepository { get; }
 		IRepository<ProductItem> ProductItemRepository { get; }
 		IRepository<Product> ProductRepository { get; }
-		IRepository<UserDesignUpload> UserDesignUploadRepository { get; }
-		IRepository<ProductCustomization> ProductCustomizationRepository { get; }
 		IRepository<Review> ReviewRepository { get; }
 		IRepository<User> UserRepository { get; }
 		IRepository<Entities.Notification> NotificationRepository { get; }
 		IRepository<Payment> PaymentRepository { get; }
 		IRepository<PaymentTransaction> TransactionRepository { get; }
 		IRepository<WorkshopRegistration> WorkshopRegistrationRepository { get; }
+		IRepository<CustomProduct> CustomProductRepository { get; }
+		IRepository<CustomProductFile> CustomProductFileRepository { get; }
 
 		Task BeginTransactionAsync();
 		Task CommitTransactionAsync();

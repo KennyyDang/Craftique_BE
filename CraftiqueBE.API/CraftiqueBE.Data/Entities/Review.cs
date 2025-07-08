@@ -23,7 +23,7 @@ namespace CraftiqueBE.Data.Entities
 
 		[ForeignKey("ProductItem")]
 		[Required(ErrorMessage = "Product Item ID is required.")]
-		public int ProductItemID { get; set; }
+		public int? ProductItemID { get; set; }
 
 		[ForeignKey("Shipper")]
 		public string? ShipperID { get; set; }
