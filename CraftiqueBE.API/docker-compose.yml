@@ -9,11 +9,7 @@ services:
       - "5000:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - server=sqlserver-container
-      - database=CraftiqueDB
-      - port=1433
-      - dbuser=sa
-      - password=YourStrongP@ssword
+      - ConnectionStrings__DefaultConnection=Server=sqlserver-container-craftique,1433;Database=CraftiqueDB;User Id=sa;Password=YourStrongP@ssword;TrustServerCertificate=True
       # JWT Settings
       - JWT__AccessTokenExpiredByMinutes=15
       - JWT__RefreshTokenExpiredByHours=3
@@ -43,12 +39,12 @@ services:
 
   sql-server:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: sqlserver-container
+    container_name: sqlserver-container-craftique
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=YourStrongP@ssword
     ports:
-      - "1433:1433"
+      - "1434:1433"
     volumes:
       - mssqldata:/var/opt/mssql
     networks:
