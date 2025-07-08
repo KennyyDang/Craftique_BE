@@ -31,10 +31,11 @@ using AutoMapper;
 using CraftiqueBE.Data.ViewModels.WalletVM;
 using CraftiqueBE.Data.Models.WalletModel;
 using CraftiqueBE.Data.ViewModels.PaymentVM;
-using CraftiqueBE.Data.ViewModels.UserDesignUploadVM;
-using CraftiqueBE.Data.Models.DesignUploadModel;
+using CraftiqueBE.Data.ViewModels.CustomProductVM;
+using CraftiqueBE.Data.Models.CustomProductModel;
 using CraftiqueBE.Data.Models.WorkshopRegistrationModel;
 using CraftiqueBE.Data.ViewModels.WorkshopRegistrationVM;
+using CraftiqueBE.Data.ViewModels.CustomProductVM;
 
 namespace CraftiqueBE.Data.Mapping
 {
@@ -152,15 +153,6 @@ namespace CraftiqueBE.Data.Mapping
 
 			CreateMap<PaymentTransaction, TransactionViewModel>().ReverseMap();
 
-			CreateMap<UserDesignUpload, DesignUploadViewModel>().ReverseMap();
-
-			CreateMap<ProductCustomization, CustomizationViewModel>()
-			.ForMember(dest => dest.FileUrl, opt => opt.MapFrom(src =>
-				src.UserDesignUpload != null ? src.UserDesignUpload.FileUrl : null));
-
-			CreateMap<CreateCustomizationModel, ProductCustomization>()
-				.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
-
 			CreateMap<WorkshopRegistration, WorkshopRegistrationViewModel>().ReverseMap();
 
 			CreateMap<CreateWorkshopRegistrationModel, WorkshopRegistration>()
@@ -168,6 +160,8 @@ namespace CraftiqueBE.Data.Mapping
 				.ForMember(dest => dest.Status, opt => opt.MapFrom(_ => "CHỜ XÁC NHẬN"))
 				.ForMember(dest => dest.IsDeleted, opt => opt.MapFrom(_ => false));
 
+			CreateMap<CustomProduct, CustomProductViewModel>().ReverseMap();
+			CreateMap<CustomProductFile, CustomProductFileViewModel>().ReverseMap();
 		}
 	}
 }

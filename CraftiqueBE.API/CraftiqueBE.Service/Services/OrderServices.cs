@@ -383,6 +383,56 @@ namespace CraftiqueBE.Service.Services
 
 			return viewModel;
 		}
+		public async Task<Order> AddCustomProductOrderAsync(OrderCustomProductRequestModel model, string userId)
+		{
+			await _unitOfWork.BeginTransactionAsync();
+			try
+			{
+				// Lấy CustomProductFile
+				var customFile = await _unitOfWork.CustomProductFileRepository.GetByIdAsync(model.CustomProductFileID);
+				if (customFile == null)
+					throw new KeyNotFoundException("CustomProductFile not found.");
 
+				// Lấy CustomProduct
+				var customProduct = await _unitOfWork.CustomProductRepository.GetByIdAsync(customFile.CustomProductID);
+				if (customProduct == null)
+					throw new KeyNotFoundException("CustomProduct not found.");
+
+				// Tính total
+				var total = (double)(customProduct.Price * customFile.Quantity);
+
+				var order = new Order
+				{
+					UserID = userId,
+					OrderDate = DateTime.UtcNow,
+					OrderStatus = OrderStatusHelper.Pending,
+					Total = total,
+					IsDeleted = false
+				};
+
+				await _unitOfWork.OrderRepository.AddAsync(order);
+				await _unitOfWork.SaveChangesAsync();
+
+				var orderDetail = new OrderDetail
+				{
+					OrderID = order.OrderID,
+					CustomProductFileID = model.CustomProductFileID,
+					Quantity = customFile.Quantity,
+					Price = (double)customProduct.Price,
+					IsDeleted = false
+				};
+
+				await _unitOfWork.OrderDetailRepository.AddAsync(orderDetail);
+				await _unitOfWork.SaveChangesAsync();
+				await _unitOfWork.CommitTransactionAsync();
+
+				return order;
+			}
+			catch
+			{
+				await _unitOfWork.RollbackTransactionAsync();
+				throw;
+			}
+		}
 	}
 }

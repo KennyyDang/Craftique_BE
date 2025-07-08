@@ -15,8 +15,7 @@ namespace CraftiqueBE.Data.Entities
 		public int OrderDetailID { get; set; }
 
 		[ForeignKey("ProductItem")]
-		[Required(ErrorMessage = "Product Item ID is required.")]
-		public int ProductItemID { get; set; }
+		public int? ProductItemID { get; set; }  // ➔ nullable vì có thể không có
 
 		[ForeignKey("Order")]
 		[Required(ErrorMessage = "Order ID is required.")]
@@ -29,12 +28,19 @@ namespace CraftiqueBE.Data.Entities
 		[Required(ErrorMessage = "Price is required.")]
 		[Range(0, double.MaxValue, ErrorMessage = "Price must be at least 0.")]
 		public double Price { get; set; }
+
 		public bool IsDeleted { get; set; }
+
 		public ProductItem ProductItem { get; set; }
 		public Order Order { get; set; }
 		public virtual ICollection<Review> Reviews { get; set; }
-		[ForeignKey("ProductCustomization")]
-		public int? ProductCustomizationID { get; set; }
-		public virtual ProductCustomization ProductCustomization { get; set; }
+
+		// ➤ sửa lại quan hệ custom
+		[ForeignKey("CustomProductFile")]
+		public int? CustomProductFileID { get; set; }
+
+		public CustomProductFile CustomProductFile { get; set; }
 	}
+
+
 }

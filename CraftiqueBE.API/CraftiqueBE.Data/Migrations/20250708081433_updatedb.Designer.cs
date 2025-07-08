@@ -4,6 +4,7 @@ using CraftiqueBE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CraftiqueBE.Data.Migrations
 {
     [DbContext(typeof(CraftiqueDBContext))]
-    partial class CraftiqueDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250708081433_updatedb")]
+    partial class updatedb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -309,9 +312,6 @@ namespace CraftiqueBE.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("UploadedAt")
                         .HasColumnType("datetime2");
 
@@ -430,7 +430,7 @@ namespace CraftiqueBE.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailID"));
 
-                    b.Property<int?>("CustomProductFileID")
+                    b.Property<int?>("CustomProductID")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
@@ -442,7 +442,7 @@ namespace CraftiqueBE.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("ProductItemID")
+                    b.Property<int>("ProductItemID")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -450,7 +450,7 @@ namespace CraftiqueBE.Data.Migrations
 
                     b.HasKey("OrderDetailID");
 
-                    b.HasIndex("CustomProductFileID");
+                    b.HasIndex("CustomProductID");
 
                     b.HasIndex("OrderID");
 
@@ -1293,10 +1293,9 @@ namespace CraftiqueBE.Data.Migrations
 
             modelBuilder.Entity("CraftiqueBE.Data.Entities.OrderDetail", b =>
                 {
-                    b.HasOne("CraftiqueBE.Data.Entities.CustomProductFile", "CustomProductFile")
+                    b.HasOne("CraftiqueBE.Data.Entities.CustomProduct", "CustomProduct")
                         .WithMany()
-                        .HasForeignKey("CustomProductFileID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("CustomProductID");
 
                     b.HasOne("CraftiqueBE.Data.Entities.Order", "Order")
                         .WithMany("OrderDetails")
@@ -1307,9 +1306,10 @@ namespace CraftiqueBE.Data.Migrations
                     b.HasOne("CraftiqueBE.Data.Entities.ProductItem", "ProductItem")
                         .WithMany("OrderDetails")
                         .HasForeignKey("ProductItemID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
-                    b.Navigation("CustomProductFile");
+                    b.Navigation("CustomProduct");
 
                     b.Navigation("Order");
 

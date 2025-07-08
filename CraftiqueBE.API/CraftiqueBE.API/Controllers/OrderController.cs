@@ -548,5 +548,22 @@ namespace CraftiqueBE.API.Controllers
 			return BadRequest(new { message = "Failed to update order status." });
 		}
 
+		[HttpPost("custom")]
+		public async Task<IActionResult> AddCustomProductOrder([FromBody] OrderCustomProductRequestModel model)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(ModelState);
+
+			// Lấy user từ token
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			if (string.IsNullOrEmpty(userId))
+				return Unauthorized("User not authenticated");
+
+			// Gọi service, truyền userId riêng
+			var order = await _orderServices.AddCustomProductOrderAsync(model, userId);
+			var orderViewModel = _mapper.Map<OrderViewModel>(order);
+
+			return CreatedAtAction(nameof(GetOrderById), new { id = orderViewModel.OrderID }, orderViewModel);
+		}
 	}
 }

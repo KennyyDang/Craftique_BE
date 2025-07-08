@@ -23,8 +23,6 @@ namespace CraftiqueBE.Data
 		private readonly IRepository<Product> _productRepository;
 		private readonly IRepository<ProductItem> _productItemRepository;
 		private readonly IRepository<ProductImg> _productImgRepository;
-		private readonly IRepository<UserDesignUpload> _userDesignUploadRepository;
-		private readonly IRepository<ProductCustomization> _productCustomizationRepository;
 		private readonly IRepository<BlogImage> _blogImageRepository;
 		private readonly IRepository<Review> _reviewRepository;
 		private readonly IRepository<ChatRoom> _chatRoomRepository;
@@ -37,6 +35,8 @@ namespace CraftiqueBE.Data
 		private readonly IRepository<Payment> _paymentRepository;
 		private readonly IRepository<PaymentTransaction> _transactionRepository;
 		private readonly IRepository<WorkshopRegistration> _workshopRegistrationRepository;
+		private readonly IRepository<CustomProduct> _customProductRepository;
+		private readonly IRepository<CustomProductFile> _customProductFileRepository;
 
 		public UnitOfWork(
 			CraftiqueDBContext dbContext,
@@ -48,8 +48,6 @@ namespace CraftiqueBE.Data
 			IRepository<ProductItem> productItemRepository,
 			IRepository<Product> productRepository,
 			IRepository<ProductImg> productImgRepository,
-			IRepository<UserDesignUpload> userDesignUploadRepository,
-			IRepository<ProductCustomization> productCustomizationRepository,
 			IRepository<BlogImage> blogImageRepository,
 			IRepository<Review> reviewRepository,
 			IRepository<ChatRoom> chatRoomRepository,
@@ -60,7 +58,9 @@ namespace CraftiqueBE.Data
 			IRepository<Entities.Notification> notificationRepository,
 			IRepository<PaymentTransaction> transactionRepository,
 			IRepository<Payment> paymentRepository,
-			IRepository<WorkshopRegistration> workshopRegistrationRepository
+			IRepository<WorkshopRegistration> workshopRegistrationRepository,
+			IRepository<CustomProduct> customProductRepository,
+			IRepository<CustomProductFile> customProductFileRepository
 		)
 		{
 			_dbContext = dbContext;
@@ -72,8 +72,6 @@ namespace CraftiqueBE.Data
 			_productItemRepository = productItemRepository;
 			_productRepository = productRepository;
 			_productImgRepository = productImgRepository;
-			_userDesignUploadRepository = userDesignUploadRepository;
-			_productCustomizationRepository = productCustomizationRepository;
 			_blogImageRepository = blogImageRepository;
 			_reviewRepository = reviewRepository;
 			_chatRoomRepository = chatRoomRepository;
@@ -85,6 +83,8 @@ namespace CraftiqueBE.Data
 			_paymentRepository = paymentRepository;
 			_transactionRepository = transactionRepository;
 			_workshopRegistrationRepository = workshopRegistrationRepository;
+			_customProductRepository = customProductRepository;
+			_customProductFileRepository = customProductFileRepository;
 		}
 
 		// 🔹 Repository getter
@@ -95,8 +95,6 @@ namespace CraftiqueBE.Data
 		public IRepository<ProductItem> ProductItemRepository => _productItemRepository;
 		public IRepository<Product> ProductRepository => _productRepository;
 		public IRepository<ProductImg> ProductImgRepository => _productImgRepository;
-		public IRepository<UserDesignUpload> UserDesignUploadRepository => _userDesignUploadRepository;
-		public IRepository<ProductCustomization> ProductCustomizationRepository => _productCustomizationRepository;
 		public IRepository<BlogImage> BlogImageRepository => _blogImageRepository;
 		public IRepository<Review> ReviewRepository => _reviewRepository;
 		public IRepository<ChatRoom> ChatRoomRepository => _chatRoomRepository;
@@ -110,6 +108,8 @@ namespace CraftiqueBE.Data
 		public IRepository<Payment> PaymentRepository => _paymentRepository;
 		public IRepository<PaymentTransaction> TransactionRepository => _transactionRepository;	
 		public IRepository<WorkshopRegistration> WorkshopRegistrationRepository => _workshopRegistrationRepository;
+		public IRepository<CustomProduct> CustomProductRepository => _customProductRepository;
+		public IRepository<CustomProductFile> CustomProductFileRepository => _customProductFileRepository;
 
 		// 🔹 Transaction - Dùng async để tránh block luồng
 		public async Task BeginTransactionAsync()

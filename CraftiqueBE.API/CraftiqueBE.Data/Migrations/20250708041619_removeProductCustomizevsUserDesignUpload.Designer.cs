@@ -4,6 +4,7 @@ using CraftiqueBE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CraftiqueBE.Data.Migrations
 {
     [DbContext(typeof(CraftiqueDBContext))]
-    partial class CraftiqueDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250708041619_removeProductCustomizevsUserDesignUpload")]
+    partial class removeProductCustomizevsUserDesignUpload
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -250,82 +253,6 @@ namespace CraftiqueBE.Data.Migrations
                     b.ToTable("ChatRooms");
                 });
 
-            modelBuilder.Entity("CraftiqueBE.Data.Entities.CustomProduct", b =>
-                {
-                    b.Property<int>("CustomProductID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomProductID"));
-
-                    b.Property<string>("CustomName")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Description")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<decimal>("Price")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
-
-                    b.HasKey("CustomProductID");
-
-                    b.HasIndex("ProductID");
-
-                    b.ToTable("CustomProducts");
-                });
-
-            modelBuilder.Entity("CraftiqueBE.Data.Entities.CustomProductFile", b =>
-                {
-                    b.Property<int>("CustomProductFileID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomProductFileID"));
-
-                    b.Property<int>("CustomProductID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CustomText")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<string>("FileName")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("FileUrl")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UploadedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CustomProductFileID");
-
-                    b.HasIndex("CustomProductID");
-
-                    b.ToTable("CustomProductFiles");
-                });
-
             modelBuilder.Entity("CraftiqueBE.Data.Entities.Notification", b =>
                 {
                     b.Property<int>("NotificationID")
@@ -430,9 +357,6 @@ namespace CraftiqueBE.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailID"));
 
-                    b.Property<int?>("CustomProductFileID")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -442,15 +366,16 @@ namespace CraftiqueBE.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("ProductItemID")
+                    b.Property<int?>("ProductCustomizationID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductItemID")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("OrderDetailID");
-
-                    b.HasIndex("CustomProductFileID");
 
                     b.HasIndex("OrderID");
 
@@ -1226,28 +1151,6 @@ namespace CraftiqueBE.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CraftiqueBE.Data.Entities.CustomProduct", b =>
-                {
-                    b.HasOne("CraftiqueBE.Data.Models.Product", "Product")
-                        .WithMany("CustomProducts")
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("CraftiqueBE.Data.Entities.CustomProductFile", b =>
-                {
-                    b.HasOne("CraftiqueBE.Data.Entities.CustomProduct", "CustomProduct")
-                        .WithMany("CustomProductFiles")
-                        .HasForeignKey("CustomProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CustomProduct");
-                });
-
             modelBuilder.Entity("CraftiqueBE.Data.Entities.Notification", b =>
                 {
                     b.HasOne("CraftiqueBE.Data.Entities.User", "User")
@@ -1293,11 +1196,6 @@ namespace CraftiqueBE.Data.Migrations
 
             modelBuilder.Entity("CraftiqueBE.Data.Entities.OrderDetail", b =>
                 {
-                    b.HasOne("CraftiqueBE.Data.Entities.CustomProductFile", "CustomProductFile")
-                        .WithMany()
-                        .HasForeignKey("CustomProductFileID")
-                        .OnDelete(DeleteBehavior.Restrict);
-
                     b.HasOne("CraftiqueBE.Data.Entities.Order", "Order")
                         .WithMany("OrderDetails")
                         .HasForeignKey("OrderID")
@@ -1307,9 +1205,8 @@ namespace CraftiqueBE.Data.Migrations
                     b.HasOne("CraftiqueBE.Data.Entities.ProductItem", "ProductItem")
                         .WithMany("OrderDetails")
                         .HasForeignKey("ProductItemID")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("CustomProductFile");
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Order");
 
@@ -1544,11 +1441,6 @@ namespace CraftiqueBE.Data.Migrations
                     b.Navigation("ChatParticipants");
                 });
 
-            modelBuilder.Entity("CraftiqueBE.Data.Entities.CustomProduct", b =>
-                {
-                    b.Navigation("CustomProductFiles");
-                });
-
             modelBuilder.Entity("CraftiqueBE.Data.Entities.Order", b =>
                 {
                     b.Navigation("OrderDetails");
@@ -1607,8 +1499,6 @@ namespace CraftiqueBE.Data.Migrations
             modelBuilder.Entity("CraftiqueBE.Data.Models.Product", b =>
                 {
                     b.Navigation("Blogs");
-
-                    b.Navigation("CustomProducts");
 
                     b.Navigation("ProductItems");
 
