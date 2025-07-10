@@ -17,15 +17,13 @@ namespace CraftiqueBE.Data.Entities
 
 		[Required]
 		public int ProductID { get; set; } // Sản phẩm gốc
-
+		[MaxLength(1000)]
+		public string? ImageUrl { get; set; }
 		[MaxLength(255)]
 		public string? CustomName { get; set; } // Tên custom, có thể để trống
-
 		[MaxLength(1000)]
 		public string? Description { get; set; } // Mô tả yêu cầu custom
-
 		public decimal Price { get; set; }
-
 		public bool IsDeleted { get; set; }
 
 		// Quan hệ

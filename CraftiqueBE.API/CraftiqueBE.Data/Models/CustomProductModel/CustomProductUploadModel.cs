@@ -1,20 +1,22 @@
-﻿using CraftiqueBE.Data.ViewModels.CustomProductVM;
+﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CraftiqueBE.Data.ViewModels.CustomProductVM
+namespace CraftiqueBE.Data.Models.CustomProductModel
 {
-	public class CustomProductViewModel
+	public class CustomProductUploadModel
 	{
-		public int CustomProductID { get; set; }
 		public int ProductID { get; set; }
-		public string? CustomName { get; set; }
-		public string? Description { get; set; }
-		public decimal Price { get; set; }
-		public string? ImageUrl { get; set; } 
 
+		public string? CustomName { get; set; }
+
+		public string? Description { get; set; }
+
+		public decimal Price { get; set; }
+
+		public IFormFile? Image { get; set; }  // ➤ Thêm file ảnh
 	}
 }

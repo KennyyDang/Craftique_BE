@@ -20,14 +20,14 @@ namespace CraftiqueBE.API.Controllers
 		// ➤ Admin thêm custom product
 		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}")]
 		[HttpPost("admin")]
-		public async Task<IActionResult> AddCustomProduct([FromBody] CustomProductCreateModel model)
+		public async Task<IActionResult> AddCustomProduct([FromForm] CustomProductUploadModel model)
 		{
-			var result = await _customProductService.AddCustomProductAsync(model);
+			var result = await _customProductService.AddCustomProductWithImageAsync(model);
 			return Ok(result);
 		}
 
 		// ➤ Admin, Staff xem tất cả custom products
-		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}")]
+		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}, {RolesHelper.Customer}")]
 		[HttpGet]
 		public async Task<IActionResult> GetAllCustomProducts()
 		{
@@ -44,5 +44,18 @@ namespace CraftiqueBE.API.Controllers
 			if (!success) return BadRequest("Xoá thất bại.");
 			return Ok(new { message = "Đã xoá thành công." });
 		}
+
+		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}, {RolesHelper.Customer}")]
+		[HttpGet("{id}")]
+		public async Task<IActionResult> GetCustomProductById(int id)
+		{
+			var products = await _customProductService.GetAllCustomProductsAsync();
+			var product = products.FirstOrDefault(p => p.CustomProductID == id);
+			if (product == null)
+				return NotFound();
+
+			return Ok(product);
+		}
+
 	}
 }
