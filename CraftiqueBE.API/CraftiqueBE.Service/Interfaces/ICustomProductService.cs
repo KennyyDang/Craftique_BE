@@ -12,5 +12,6 @@ namespace CraftiqueBE.Service.Interfaces
 		Task<List<CustomProductViewModel>> GetAllCustomProductsAsync();
 
 		Task<bool> DeleteCustomProductAsync(int customProductId);
+		Task<CustomProductViewModel> AddCustomProductWithImageAsync(CustomProductUploadModel model);
 	}
 }

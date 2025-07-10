@@ -141,7 +141,12 @@ namespace CraftiqueBE.Data.Mapping
 			CreateMap<Order, OrderViewModel>()
 				.ForMember(dest => dest.OrderDetails, opt => opt.MapFrom(src => src.OrderDetails));
 
-			CreateMap<OrderDetail, OrderDetailViewModel>();	
+			CreateMap<OrderDetail, OrderDetailViewModel>()
+				.ForMember(dest => dest.ProductItemID, opt => opt.MapFrom(src => src.ProductItemID))
+				.ForMember(dest => dest.CustomProductFileID, opt => opt.MapFrom(src => src.CustomProductFileID))
+				.ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Quantity))
+				.ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price));
+
 
 			CreateMap<Payment, PaymentViewModel>();
 

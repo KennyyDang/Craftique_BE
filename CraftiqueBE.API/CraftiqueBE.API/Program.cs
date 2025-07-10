@@ -186,6 +186,7 @@ namespace CraftiqueBE.API
 			app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 			app.UseCors();
+			app.UseStaticFiles();
 			app.UseRouting();
 			app.UseAuthentication();
 			app.UseAuthorization();

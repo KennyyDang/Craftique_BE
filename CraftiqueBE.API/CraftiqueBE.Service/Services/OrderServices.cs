@@ -115,36 +115,56 @@ namespace CraftiqueBE.Service.Services
 				var result = await _unitOfWork.OrderRepository.AddAsync(order);
 				await _unitOfWork.SaveChangesAsync();
 
-				var productIds = model.OrderDetails.Select(od => od.ProductItemID).ToList();
-				var products = await _unitOfWork.ProductItemRepository.GetAllAsync(p => productIds.Contains(p.ProductItemID));
-
 				foreach (var item in model.OrderDetails)
 				{
-					var product = products.FirstOrDefault(p => p.ProductItemID == item.ProductItemID);
-
-					if (product == null)
+					if (item.ProductItemID != null && item.ProductItemID != 0)
 					{
-						throw new KeyNotFoundException($"ProductItem {item.ProductItemID} not found");
+						var product = await _unitOfWork.ProductItemRepository.GetByIdAsync(item.ProductItemID.Value);
+						if (product == null)
+							throw new KeyNotFoundException($"ProductItem {item.ProductItemID} not found");
+
+						if (product.Quantity < item.Quantity)
+							throw new InvalidOperationException($"Insufficient stock for ProductItem {item.ProductItemID}. Available: {product.Quantity}, Requested: {item.Quantity}");
+
+						var orderDetail = new OrderDetail
+						{
+							OrderID = result.OrderID,
+							ProductItemID = item.ProductItemID,
+							Price = item.Price,
+							Quantity = item.Quantity,
+							IsDeleted = false
+						};
+
+						await _unitOfWork.OrderDetailRepository.AddAsync(orderDetail);
+
+						product.Quantity -= item.Quantity;
+						await _unitOfWork.ProductItemRepository.Update(product);
 					}
-
-					if (product.Quantity < item.Quantity)
+					else if (item.CustomProductFileID != null && item.CustomProductFileID != 0)
 					{
-						throw new InvalidOperationException($"Insufficient stock for ProductItem {item.ProductItemID}. Available: {product.Quantity}, Requested: {item.Quantity}");
+						var customFile = await _unitOfWork.CustomProductFileRepository.GetByIdAsync(item.CustomProductFileID.Value);
+						if (customFile == null)
+							throw new KeyNotFoundException($"CustomProductFile {item.CustomProductFileID} not found");
+
+						var customProduct = await _unitOfWork.CustomProductRepository.GetByIdAsync(customFile.CustomProductID);
+						if (customProduct == null)
+							throw new KeyNotFoundException($"CustomProduct {customFile.CustomProductID} not found");
+
+						var orderDetail = new OrderDetail
+						{
+							OrderID = result.OrderID,
+							CustomProductFileID = item.CustomProductFileID,
+							Price = (double)customProduct.Price,
+							Quantity = customFile.Quantity,
+							IsDeleted = false
+						};
+
+						await _unitOfWork.OrderDetailRepository.AddAsync(orderDetail);
 					}
-
-					var orderDetail = new OrderDetail
+					else
 					{
-						OrderID = result.OrderID,
-						ProductItemID = item.ProductItemID,
-						Price = item.Price,
-						Quantity = item.Quantity,
-						IsDeleted = false
-					};
-
-					await _unitOfWork.OrderDetailRepository.AddAsync(orderDetail);
-
-					product.Quantity -= item.Quantity;
-					await _unitOfWork.ProductItemRepository.Update(product);
+						throw new InvalidOperationException("Each OrderDetail must have either ProductItemID or CustomProductFileID");
+					}
 				}
 
 				await _unitOfWork.SaveChangesAsync();

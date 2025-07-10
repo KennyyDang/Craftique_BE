@@ -36,8 +36,8 @@ namespace CraftiqueBE.Data.Models.OrderModel
 
 	public class OrderDetailModel
 	{
-		[Required(ErrorMessage = "Product Item ID is required.")]
-		public int ProductItemID { get; set; }
+		public int? ProductItemID { get; set; }   // ➕ sửa thành nullable
+		public int? CustomProductFileID { get; set; }  // ➕ thêm CustomProductFileID
 
 		[Required(ErrorMessage = "Quantity is required.")]
 		[Range(0, int.MaxValue, ErrorMessage = "Quantity must be at least 0.")]
@@ -47,4 +47,5 @@ namespace CraftiqueBE.Data.Models.OrderModel
 		[Range(0, double.MaxValue, ErrorMessage = "Price must be at least 0.")]
 		public double Price { get; set; }
 	}
+
 }
