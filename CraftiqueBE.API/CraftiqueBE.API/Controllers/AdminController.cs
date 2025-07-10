@@ -65,7 +65,7 @@ namespace CraftiqueBE.API.Controllers
 			return Ok(result);
 		}
 
-		[HttpGet("get-top-costumers")]
+		[HttpGet("get-top-customers")]
 		public async Task<IActionResult> GetTopCustomersAsync([FromQuery] TimeModel model, int? topN)
 		{
 			if (!ModelState.IsValid)

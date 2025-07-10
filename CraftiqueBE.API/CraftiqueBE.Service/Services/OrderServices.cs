@@ -95,10 +95,14 @@ namespace CraftiqueBE.Service.Services
 			await _unitOfWork.BeginTransactionAsync();
 			try
 			{
-				var order = new Order
+                var vnTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+                var nowVn = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, vnTimeZone);
+                var orderDate =  nowVn;
+
+                var order = new Order
 				{
 					UserID = model.UserID,
-					OrderDate = model.OrderDate,
+					OrderDate = orderDate,
 					Address = model.Address,
 					PaymentMethod = model.PaymentMethod,
 					ShippingMethodID = model.ShippingMethodID,
