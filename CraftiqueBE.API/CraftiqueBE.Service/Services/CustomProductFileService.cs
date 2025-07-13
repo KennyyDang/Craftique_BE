@@ -90,5 +90,41 @@ namespace CraftiqueBE.Service.Services
 
 			return true;
 		}
+		public async Task<List<CustomProductFileViewModel>> GetAllFilesAsync()
+		{
+			var files = await _unitOfWork.CustomProductFileRepository
+				.GetAllAsync(
+					f => !f.IsDeleted,
+					f => f.CustomProduct // include để lấy thông tin custom product
+				);
+
+			var result = files.Select(file =>
+			{
+				var vm = _mapper.Map<CustomProductFileViewModel>(file);
+				vm.CustomProductImageUrl = file.CustomProduct?.ImageUrl;
+				vm.CustomProductName = file.CustomProduct?.CustomName;
+				return vm;
+			}).ToList();
+
+			return result;
+		}
+		public async Task<CustomProductFileViewModel?> GetFileByIdAsync(int id)
+		{
+			var file = (await _unitOfWork.CustomProductFileRepository
+				.GetAllAsync(
+					f => f.CustomProductFileID == id && !f.IsDeleted,
+					f => f.CustomProduct // Chỉ cần đến đây là đủ
+				)).FirstOrDefault();
+
+			if (file == null) return null;
+
+			var vm = _mapper.Map<CustomProductFileViewModel>(file);
+
+			// ✅ Lấy từ CustomProduct, không phải Product
+			vm.CustomProductImageUrl = file.CustomProduct?.ImageUrl;
+			vm.CustomProductName = file.CustomProduct?.CustomName;
+
+			return vm;
+		}
 	}
 }

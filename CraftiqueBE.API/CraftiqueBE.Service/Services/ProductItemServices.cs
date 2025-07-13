@@ -269,31 +269,57 @@ namespace CraftiqueBE.Service.Services
 			}
 		}
 
-		public async Task<object> GetTotalSoldForProductItemAsync(int productItemId)
+		public async Task<object> GetTotalSoldForProductItemAsync(int productId)
 		{
+			// Check ProductItem trước
 			var productItem = await _unitOfWork.ProductItemRepository
 				.GetAllQueryable()
-				.Where(pi => pi.ProductItemID == productItemId && !pi.IsDeleted)
+				.Where(pi => pi.ProductItemID == productId && !pi.IsDeleted)
 				.FirstOrDefaultAsync();
 
-			if (productItem == null)
+			if (productItem != null)
 			{
-				throw new KeyNotFoundException($"ProductItem with ID {productItemId} not found or has been deleted.");
+				var totalSold = await _unitOfWork.OrderRepository
+					.GetAllQueryable()
+					.Where(o => o.OrderStatus == OrderStatusHelper.Completed)
+					.SelectMany(o => o.OrderDetails)
+					.Where(od => od.ProductItemID == productId)
+					.SumAsync(od => od.Quantity);
+
+				return new
+				{
+					Type = "ProductItem",
+					Id = productId,
+					Name = productItem.Name,
+					TotalSold = totalSold
+				};
 			}
 
-			var totalSold = await _unitOfWork.OrderRepository
-				.GetAllQueryable()
-				.Where(o => o.OrderStatus == OrderStatusHelper.Completed)
-				.SelectMany(o => o.OrderDetails)
-				.Where(od => od.ProductItemID == productItemId)
-				.SumAsync(od => od.Quantity);
-
-			return new
+			// Nếu không tìm thấy ProductItem → check CustomProductFile
+			var customFile = await _unitOfWork.CustomProductFileRepository.GetByIdAsync(productId);
+			if (customFile != null)
 			{
-				ProductItemId = productItemId,
-				ProductItemName = productItem.Name,
-				TotalSold = totalSold
-			};
+				var customProduct = await _unitOfWork.CustomProductRepository.GetByIdAsync(customFile.CustomProductID);
+
+				var totalSold = await _unitOfWork.OrderRepository
+					.GetAllQueryable()
+					.Where(o => o.OrderStatus == OrderStatusHelper.Completed)
+					.SelectMany(o => o.OrderDetails)
+					.Where(od => od.CustomProductFileID == productId)
+					.SumAsync(od => od.Quantity);
+
+				return new
+				{
+					Type = "CustomProduct",
+					Id = productId,
+					Name = customProduct?.CustomName,
+					TotalSold = totalSold
+				};
+			}
+
+			// Nếu không có ở cả 2 bảng
+			throw new KeyNotFoundException($"Không tìm thấy ProductItem hoặc CustomProductFile với ID {productId}");
 		}
+
 	}
 }

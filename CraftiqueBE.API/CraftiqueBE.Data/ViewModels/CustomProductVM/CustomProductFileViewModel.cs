@@ -10,8 +10,10 @@ namespace CraftiqueBE.Data.ViewModels.CustomProductVM
 	{
 		public int CustomProductFileID { get; set; }
 		public string? FileUrl { get; set; }
-		public string? FileName { get; set; }
 		public string? CustomText { get; set; }
 		public DateTime UploadedAt { get; set; }
+		public int Quantity { get; set; }
+		public string? CustomProductImageUrl { get; set; }
+		public string? CustomProductName { get; set; }
 	}
 }
