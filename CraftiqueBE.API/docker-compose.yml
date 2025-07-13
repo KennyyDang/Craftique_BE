@@ -1,0 +1,57 @@
+services:
+  craftiquebe.api:
+    image: ${DOCKER_REGISTRY-}craftiquebeapi
+    build:
+      context: .
+      dockerfile: CraftiqueBE.API/Dockerfile
+    container_name: craftique-api
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver-container-craftique,1433;Database=CraftiqueDB;User Id=sa;Password=YourStrongP@ssword;TrustServerCertificate=True
+      # JWT Settings
+      - JWT__AccessTokenExpiredByMinutes=15
+      - JWT__RefreshTokenExpiredByHours=3
+      - JWT__Audience=CraftiqueClient
+      - JWT__Issuer=CraftiqueAPI
+      - JWT__SecretKey=ThisIsTheSecureKeyByKien1234567890
+      # Google Authentication
+      - Authentication__Google__ClientId=622721304691-32fun7k34v8uu58d3c68a5amu3fkb4ik.apps.googleusercontent.com
+      - Authentication__Google__ClientSecret=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
+      # Mail Settings
+      - MailSettings__DefaultSender=craftique68@gmail.com
+      - MailSettings__Password=swggrulwsdywcbhq
+      - MailSettings__DisplayName=Craftique Shop
+      - MailSettings__Provider=smtp.gmail.com
+      - MailSettings__Port=587
+      # PayOS Settings
+      - PayOS__ClientId=46c1b4f5-0ddd-4573-9602-ecbf8e5e47d6
+      - PayOS__ApiKey=9c88eb58-63ab-4100-880c-7d65ae6466c6
+      - PayOS__ChecksumKey=71df19c1b9a85693b537cefc0de193ef50bb32815d90685fa4d1b47d97efad12
+      - PayOS__ReturnUrl=http://localhost:3000/payment-callback
+      - PayOS__CancelUrl=http://localhost:3000/purchase-order
+    depends_on:
+      - sql-server
+    networks:
+      - craftique-network
+    restart: on-failure
+
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver-container-craftique
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrongP@ssword
+    ports:
+      - "1434:1433"
+    volumes:
+      - mssqldata:/var/opt/mssql
+    networks:
+      - craftique-network
+
+volumes:
+  mssqldata:
+
+networks:
+  craftique-network:
