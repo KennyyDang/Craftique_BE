@@ -18,5 +18,7 @@ namespace CraftiqueBE.Service.Interfaces
 
 		// Admin hoặc user xoá file
 		Task<bool> DeleteFileAsync(int customProductFileId);
+		Task<List<CustomProductFileViewModel>> GetAllFilesAsync();
+		Task<CustomProductFileViewModel?> GetFileByIdAsync(int id);
 	}
 }
