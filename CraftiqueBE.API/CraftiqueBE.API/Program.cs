@@ -36,11 +36,10 @@ namespace CraftiqueBE.API
 			builder.Services.AddDbContext<CraftiqueDBContext>(options =>
 				options.UseSqlServer(
 					builder.Configuration.GetConnectionString("DefaultConnection"),
-					b => b.MigrationsAssembly("CraftiqueBE.Data")
-			));
+					b => b.MigrationsAssembly(typeof(CraftiqueDBContext).Assembly.FullName)));
 
-			// Identity
-			builder.Services.AddIdentity<User, IdentityRole>(options =>
+            // Identity
+            builder.Services.AddIdentity<User, IdentityRole>(options =>
 			{
 				options.Password.RequiredLength = 1;
 				options.Password.RequireUppercase = false;
@@ -205,19 +204,47 @@ namespace CraftiqueBE.API
 			app.MapHub<NotificationHub>("/notificationHub");
 			app.MapControllers();
 
-			//Initialize Database
-			using (var scope = app.Services.CreateScope())
-			{
-				var services = scope.ServiceProvider;
-				var context = services.GetRequiredService<CraftiqueDBContext>();
-				context.Database.Migrate();
-				var userManager = services.GetRequiredService<UserManager<User>>();
-				var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            //Initialize Database
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<CraftiqueDBContext>();
+                var logger = services.GetRequiredService<ILogger<Program>>();
 
-				await DbInitializer.Initialize(context, userManager, roleManager);
-			}
+                // Retry logic
+                var retryCount = 0;
+                var maxRetries = 30;
 
-			app.Run();
+                while (retryCount < maxRetries)
+                {
+                    try
+                    {
+                        logger.LogInformation("Attempting to connect to database... (Attempt {RetryCount}/{MaxRetries})", retryCount + 1, maxRetries);
+                        context.Database.Migrate();
+                        logger.LogInformation("Database migration completed successfully.");
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        retryCount++;
+                        logger.LogWarning(ex, "Database connection failed. Retrying in 2 seconds... ({RetryCount}/{MaxRetries})", retryCount, maxRetries);
+
+                        if (retryCount >= maxRetries)
+                        {
+                            logger.LogError("Failed to connect to database after {MaxRetries} attempts.", maxRetries);
+                            throw;
+                        }
+
+                        await Task.Delay(TimeSpan.FromSeconds(2));
+                    }
+                }
+
+                var userManager = services.GetRequiredService<UserManager<User>>();
+                var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                await DbInitializer.Initialize(context, userManager, roleManager);
+            }
+
+            app.Run();
 		}
 	}
 }
