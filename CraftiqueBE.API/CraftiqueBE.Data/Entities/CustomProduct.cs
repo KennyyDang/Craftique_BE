@@ -28,7 +28,6 @@ namespace CraftiqueBE.Data.Entities
 
 		// Quan hệ
 		[ForeignKey("ProductID")]
-		public virtual Product Product { get; set; }
 
 		public virtual ICollection<CustomProductFile> CustomProductFiles { get; set; }
 	}

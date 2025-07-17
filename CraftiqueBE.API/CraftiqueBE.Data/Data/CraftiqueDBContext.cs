@@ -215,12 +215,6 @@ namespace CraftiqueBE.Data
 				.OnDelete(DeleteBehavior.Cascade);
 
 			modelBuilder.Entity<CustomProduct>()
-				.HasOne(cp => cp.Product)
-				.WithMany(p => p.CustomProducts)
-				.HasForeignKey(cp => cp.ProductID)
-				.OnDelete(DeleteBehavior.Restrict);
-
-			modelBuilder.Entity<CustomProduct>()
 				.Property(p => p.Price)
 				.HasPrecision(18, 2);
 
