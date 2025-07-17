@@ -73,7 +73,7 @@ namespace CraftiqueBE.API.Controllers
 		}
 
 		// ➤ Admin & Staff: lấy 1 custom product file theo ID
-		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}")]
+		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}, {RolesHelper.Customer}")]
 		[HttpGet("detail/{id}")]
 		public async Task<IActionResult> GetFileById(int id)
 		{
