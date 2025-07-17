@@ -17,8 +17,8 @@
 TestResults/
 
 # Build output
-bin/
-obj/
+**/bin/
+**/obj/
 artifacts/
 
 # Auto-generated files
