@@ -26,8 +26,6 @@ namespace CraftiqueBE.Data.Entities
 		public decimal Price { get; set; }
 		public bool IsDeleted { get; set; }
 
-		// Quan hệ
-		[ForeignKey("ProductID")]
 		public virtual ICollection<CustomProductFile> CustomProductFiles { get; set; }
 	}
 }
