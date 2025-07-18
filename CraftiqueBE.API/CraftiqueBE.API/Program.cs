@@ -148,7 +148,7 @@ namespace CraftiqueBE.API
 			{
 				options.AddDefaultPolicy(policy =>
 				{
-					policy.WithOrigins("http://localhost:3000", "http://localhost:3001")
+					policy.WithOrigins("http://localhost:3000", "http://localhost:3001", "https://craftique-shop.vercel.app", "https://craftique-admin.vercel.app")
 						  .AllowAnyHeader()
 						  .AllowAnyMethod()
 						  .AllowCredentials();
