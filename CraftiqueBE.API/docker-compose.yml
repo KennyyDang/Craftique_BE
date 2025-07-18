@@ -29,8 +29,8 @@ services:
       - PayOSClientId=46c1b4f5-0ddd-4573-9602-ecbf8e5e47d6
       - PayOSApiKey=9c88eb58-63ab-4100-880c-7d65ae6466c6
       - PayOSChecksumKey=71df19c1b9a85693b537cefc0de193ef50bb32815d90685fa4d1b47d97efad12
-      - PayOSReturnUrl=http://localhost:3000/payment-callback
-      - PayOSCancelUrl=http://localhost:3000/purchase-order
+      - PayOSReturnUrl=https://craftique-shop.vercel.app/payment-callback
+      - PayOSCancelUrl=https://craftique-shop.vercel.app/purchase-order
     depends_on:
       - sql-server
     networks:
