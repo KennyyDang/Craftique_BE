@@ -1,4 +1,4 @@
-services:
+﻿services:
   craftiquebe.api:
     image: ${DOCKER_REGISTRY-}craftiquebeapi
     container_name: craftique-api
@@ -31,11 +31,15 @@ services:
       - PayOSChecksumKey=71df19c1b9a85693b537cefc0de193ef50bb32815d90685fa4d1b47d97efad12
       - PayOSReturnUrl=https://craftique-shop.vercel.app/payment-callback
       - PayOSCancelUrl=https://craftique-shop.vercel.app/purchase-order
+    volumes:
+      # Map thư mục uploads từ container ra ngoài host để persist data
+      - uploads_data:/app/wwwroot/uploads
     depends_on:
       - sql-server
     networks:
       - craftique-network
     restart: on-failure
+
   sql-server:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sqlserver-container-craftique
@@ -48,7 +52,11 @@ services:
       - mssqldata:/var/opt/mssql
     networks:
       - craftique-network
+
+# Định nghĩa volumes để persist data
 volumes:
   mssqldata:
+  uploads_data:  # Volume mới cho uploads
+
 networks:
   craftique-network:
