@@ -33,7 +33,7 @@
       - PayOSCancelUrl=https://craftique-shop.vercel.app/purchase-order
     volumes:
       # Map thư mục uploads từ container ra ngoài host để persist data
-      - uploads_data:/app/wwwroot/uploads
+      - uploads_data:/app/wwwroot/uploads:rw
     depends_on:
       - sql-server
     networks:
@@ -56,7 +56,10 @@
 # Định nghĩa volumes để persist data
 volumes:
   mssqldata:
-  uploads_data:  # Volume mới cho uploads
+    driver: local
+  uploads_data:
+    driver: local
 
 networks:
   craftique-network:
+    driver: bridge

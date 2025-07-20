@@ -1,5 +1,4 @@
 ﻿# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
@@ -28,12 +27,20 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 
-# Tạo thư mục uploads với quyền đầy đủ TRƯỚC khi set user
-RUN mkdir -p /app/wwwroot/uploads/custom-products
-RUN chmod -R 777 /app/wwwroot/uploads
+# Tạo user non-root để security tốt hơn
+RUN groupadd -r appuser && useradd -r -g appuser appuser
+
+# Tạo thư mục uploads và set quyền
+RUN mkdir -p /app/wwwroot/uploads/custom-products && \
+    mkdir -p /app/wwwroot/uploads/designs && \
+    chown -R appuser:appuser /app/wwwroot && \
+    chmod -R 755 /app/wwwroot/uploads
 
 # Set environment variables
 ENV ASPNETCORE_URLS=http://+:8080
+
+# Chuyển sang user appuser
+USER appuser
 
 # Chạy ứng dụng
 ENTRYPOINT ["dotnet", "CraftiqueBE.API.dll"]
