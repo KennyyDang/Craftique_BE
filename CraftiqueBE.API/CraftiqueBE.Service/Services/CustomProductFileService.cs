@@ -16,8 +16,6 @@ namespace CraftiqueBE.Service.Services
 	{
 		private readonly IUnitOfWork _unitOfWork;
 		private readonly IMapper _mapper;
-		private readonly string _uploadFolder = "uploads/custom-products"; // Bạn sửa theo cấu hình của bạn
-		private readonly string[] _allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif", ".bmp" };
 
 		public CustomProductFileService(IUnitOfWork unitOfWork, IMapper mapper)
 		{
@@ -27,34 +25,14 @@ namespace CraftiqueBE.Service.Services
 
 		public async Task<CustomProductFileViewModel> UploadFileAsync(CustomProductFileUploadModel model, string userId)
 		{
-			if (model.File == null && string.IsNullOrEmpty(model.CustomText))
-				throw new ArgumentException("Phải upload file hoặc nhập text.");
-
-			string? fileUrl = null;
-			string? fileName = null;
-
-			if (model.File != null)
-			{
-				var extension = Path.GetExtension(model.File.FileName).ToLowerInvariant();
-
-				if (!_allowedExtensions.Contains(extension))
-					throw new ArgumentException("Chỉ chấp nhận các file ảnh có định dạng: jpg, jpeg, png, gif, bmp.");
-
-				fileName = Guid.NewGuid() + extension;
-				var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", _uploadFolder, fileName);
-				Directory.CreateDirectory(Path.GetDirectoryName(path));
-				using (var stream = new FileStream(path, FileMode.Create))
-				{
-					await model.File.CopyToAsync(stream);
-				}
-				fileUrl = Path.Combine("/", _uploadFolder, fileName).Replace("\\", "/");
-			}
+			if (string.IsNullOrEmpty(model.ImageUrl) && string.IsNullOrEmpty(model.CustomText))
+				throw new ArgumentException("Phải nhập link ảnh hoặc nhập text.");
 
 			var entity = new CustomProductFile
 			{
 				CustomProductID = model.CustomProductID,
-				FileUrl = fileUrl,
-				FileName = fileName,
+				FileUrl = model.ImageUrl, // <-- dùng trực tiếp link
+				FileName = null,         // không cần lưu tên file vật lý nữa
 				CustomText = model.CustomText,
 				UserId = userId,
 				UploadedAt = DateTime.UtcNow,
@@ -67,6 +45,7 @@ namespace CraftiqueBE.Service.Services
 
 			return _mapper.Map<CustomProductFileViewModel>(entity);
 		}
+
 
 		public async Task<List<CustomProductFileViewModel>> GetFilesByCustomProductAsync(int customProductId)
 		{

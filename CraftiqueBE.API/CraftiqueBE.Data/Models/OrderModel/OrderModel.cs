@@ -5,13 +5,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace CraftiqueBE.Data.Models.OrderModel
 {
 	public class OrderModel
 	{
-		[Required(ErrorMessage = "User ID is required.")]
-		public string UserID { get; set; }
+		[JsonIgnore]
+		public string? UserID { get; set; }
 
 		[Required(ErrorMessage = "Order date is required.")]
 		public DateTime OrderDate { get; set; }
@@ -46,6 +47,9 @@ namespace CraftiqueBE.Data.Models.OrderModel
 		[Required(ErrorMessage = "Price is required.")]
 		[Range(0, double.MaxValue, ErrorMessage = "Price must be at least 0.")]
 		public double Price { get; set; }
+		public string? FileUrl { get; set; }
+		public string? CustomProductImageUrl { get; set; }
+		public string? CustomProductName { get; set; }
 	}
 
 }
