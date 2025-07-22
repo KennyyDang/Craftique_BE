@@ -12,8 +12,6 @@ namespace CraftiqueBE.Service.Services
 	{
 		private readonly IUnitOfWork _unitOfWork;
 		private readonly IMapper _mapper;
-		private readonly string _uploadFolder = "uploads/custom-products";
-		private readonly string[] _allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif", ".bmp" };
 
 
 		public CustomProductService(IUnitOfWork unitOfWork, IMapper mapper)
@@ -60,31 +58,13 @@ namespace CraftiqueBE.Service.Services
 		}
 		public async Task<CustomProductViewModel> AddCustomProductWithImageAsync(CustomProductUploadModel model)
 		{
-			string? imageUrl = null;
-
-			if (model.Image != null)
-			{
-				var extension = Path.GetExtension(model.Image.FileName).ToLowerInvariant();
-				if (!_allowedExtensions.Contains(extension))
-					throw new ArgumentException("Only image files (jpg, png...) allowed.");
-
-				var fileName = $"{Guid.NewGuid()}{extension}";
-				var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", _uploadFolder, fileName);
-				Directory.CreateDirectory(Path.GetDirectoryName(path));
-				using (var stream = new FileStream(path, FileMode.Create))
-				{
-					await model.Image.CopyToAsync(stream);
-				}
-				imageUrl = Path.Combine("/", _uploadFolder, fileName).Replace("\\", "/");
-			}
-
 			var customProduct = new CustomProduct
 			{
 				ProductID = model.ProductID,
 				CustomName = model.CustomName,
 				Description = model.Description,
 				Price = model.Price,
-				ImageUrl = imageUrl,
+				ImageUrl = model.ImageUrl, // <-- dùng trực tiếp URL
 				IsDeleted = false
 			};
 

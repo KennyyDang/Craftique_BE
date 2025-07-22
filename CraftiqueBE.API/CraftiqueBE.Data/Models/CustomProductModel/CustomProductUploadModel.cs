@@ -17,6 +17,6 @@ namespace CraftiqueBE.Data.Models.CustomProductModel
 
 		public decimal Price { get; set; }
 
-		public IFormFile? Image { get; set; }  // ➤ Thêm file ảnh
+		public string? ImageUrl { get; set; }  // ➤ Thêm file ảnh
 	}
 }
