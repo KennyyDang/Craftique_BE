@@ -69,47 +69,39 @@ namespace CraftiqueBE.API.Controllers
 		}
 
 		[HttpPost]
+		[Authorize]
+		[HttpPost]
 		public async Task<IActionResult> AddOrder([FromBody] OrderModel model)
 		{
 			if (!ModelState.IsValid)
 				return BadRequest(ModelState);
-
-			var order = await _orderServices.AddAsync(model);
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			model.UserID = userId;
+			var order = await _orderServices.AddAsync(model, userId);
 			var orderViewModel = _mapper.Map<OrderViewModel>(order);
 
 			try
 			{
+				// Tự tìm tên khách hàng từ userId
 				var customerName = "Unknown";
-
-				if (!string.IsNullOrEmpty(model.UserID))
-				{
-					var user = await _userManager.FindByIdAsync(model.UserID);
-					if (user != null)
-					{
-						customerName = user.UserName ?? user.Email ?? "Customer";
-					}
-				}
+				var user = await _userManager.FindByIdAsync(userId);
+				if (user != null)
+					customerName = user.UserName ?? user.Email ?? "Customer";
 
 				var adminUsers = await _userManager.GetUsersInRoleAsync(RolesHelper.Admin);
 				var staffUsers = await _userManager.GetUsersInRoleAsync(RolesHelper.Staff);
 
-				foreach (var user in adminUsers.Union(staffUsers))
+				foreach (var notifyUser in adminUsers.Union(staffUsers))
 				{
 					var header = "New Order Placed";
 					var content = $"Customer {customerName} has placed a new order (ID: {order.OrderID})";
 
-					var notification = await _notificationServices.CreateNotification(user.Id, header, content);
+					var notification = await _notificationServices.CreateNotification(notifyUser.Id, header, content);
 
-					await _notificationHub.Clients.Group($"User_{user.Id}").SendAsync(
-						"ReceiveNotification",
-						notification
-					);
+					await _notificationHub.Clients.Group($"User_{notifyUser.Id}").SendAsync("ReceiveNotification", notification);
 
-					var unreadCount = await _notificationServices.GetUnreadCount(user.Id);
-					await _notificationHub.Clients.Group($"User_{user.Id}").SendAsync(
-						"UpdateUnreadCount",
-						unreadCount
-					);
+					var unreadCount = await _notificationServices.GetUnreadCount(notifyUser.Id);
+					await _notificationHub.Clients.Group($"User_{notifyUser.Id}").SendAsync("UpdateUnreadCount", unreadCount);
 				}
 			}
 			catch (Exception ex)
@@ -119,6 +111,7 @@ namespace CraftiqueBE.API.Controllers
 
 			return CreatedAtAction(nameof(GetOrderById), new { id = orderViewModel.OrderID }, orderViewModel);
 		}
+
 
 		[HttpPut("{orderId}/status")]
 		[Authorize]

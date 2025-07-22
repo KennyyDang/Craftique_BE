@@ -24,13 +24,7 @@ namespace CraftiqueBE.API
 		public static async Task Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
-			//builder.WebHost.ConfigureKestrel(serverOptions =>
-			//{
-			//	serverOptions.ListenAnyIP(8080);  // Fly.io yêu cầu listen cổng 8080
-			//});
-
-
-			// -------------------- CONFIGURE SERVICES --------------------
+			
 
 			// Database Context
 			builder.Services.AddDbContext<CraftiqueDBContext>(options =>
@@ -133,17 +127,6 @@ namespace CraftiqueBE.API
 			});
 
 			// CORS
-			//builder.Services.AddCors(options =>
-			//{
-			//	options.AddDefaultPolicy(policy =>
-			//	{
-			//		policy.WithOrigins("http://localhost:3000")
-			//			  .AllowAnyHeader()
-			//			  .AllowAnyMethod()
-			//			  .AllowCredentials();
-			//	});
-			//});
-
 			builder.Services.AddCors(options =>
 			{
 				options.AddDefaultPolicy(policy =>
@@ -186,11 +169,6 @@ namespace CraftiqueBE.API
 			{
 				app.UseHttpsRedirection();
 			}
-
-			// Luôn bật Swagger (test Fly.io)
-			//app.UseSwagger();
-			//app.UseSwaggerUI();
-
 
 			app.UseMiddleware<ExceptionHandlingMiddleware>();
 

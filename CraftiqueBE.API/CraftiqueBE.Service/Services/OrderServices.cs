@@ -79,18 +79,50 @@ namespace CraftiqueBE.Service.Services
 			};
 		}
 
-
-
-		public async Task<Order> GetByIdAsync(int id)
+		public async Task<OrderViewModel> GetByIdAsync(int id)
 		{
 			var order = await _unitOfWork.OrderRepository.GetByIdAsync(id, o => o.OrderDetails);
 			if (order == null)
 				throw new KeyNotFoundException($"Order with ID {id} not found.");
 
-			return order;
+			var orderVM = _mapper.Map<OrderViewModel>(order);
+			orderVM.OrderDetails = new List<OrderDetailViewModel>();
+
+			foreach (var detail in order.OrderDetails)
+			{
+				var detailVM = new OrderDetailViewModel
+				{
+					OrderDetailID = detail.OrderDetailID,
+					OrderID = detail.OrderID,
+					ProductItemID = detail.ProductItemID,
+					CustomProductFileID = detail.CustomProductFileID,
+					Quantity = detail.Quantity,
+					Price = detail.Price
+				};
+
+				if (detail.CustomProductFileID != null)
+				{
+					var customFile = await _unitOfWork.CustomProductFileRepository.GetByIdAsync(detail.CustomProductFileID.Value);
+					if (customFile != null)
+					{
+						detailVM.FileUrl = customFile.FileUrl;
+
+						var customProduct = await _unitOfWork.CustomProductRepository.GetByIdAsync(customFile.CustomProductID);
+						if (customProduct != null)
+						{
+							detailVM.CustomProductImageUrl = customProduct.ImageUrl;
+							detailVM.CustomProductName = customProduct.CustomName;
+						}
+					}
+				}
+
+				orderVM.OrderDetails.Add(detailVM);
+			}
+
+			return orderVM;
 		}
 
-		public async Task<Order> AddAsync(OrderModel model)
+		public async Task<Order> AddAsync(OrderModel model, string userId)
 		{
 			await _unitOfWork.BeginTransactionAsync();
 			try
@@ -101,7 +133,7 @@ namespace CraftiqueBE.Service.Services
 
                 var order = new Order
 				{
-					UserID = model.UserID,
+					UserID = userId,
 					OrderDate = orderDate,
 					Address = model.Address,
 					PaymentMethod = model.PaymentMethod,
