@@ -21,7 +21,7 @@ namespace CraftiqueBE.API.Controllers
 		// ➤ Customer upload file / text
 		[Authorize(Roles = RolesHelper.Customer)]
 		[HttpPost("upload")]
-		public async Task<IActionResult> UploadFile([FromBody] CustomProductFileUploadModel model)
+		public async Task<IActionResult> UploadFile([FromForm] CustomProductFileUploadModel model)
 		{
 			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 			if (string.IsNullOrEmpty(userId))

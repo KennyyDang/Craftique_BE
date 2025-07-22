@@ -36,4 +36,10 @@
 	<ItemGroup>
 		<ProjectReference Include="..\CraftiqueBE.Service\CraftiqueBE.Service.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="appsettings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
 </Project>

@@ -25,13 +25,9 @@ namespace CraftiqueBE.Data.ViewModels.OrderVM
 	{
 		public int OrderDetailID { get; set; }
 		public int OrderID { get; set; }
-		public int? ProductItemID { get; set; }
-		public int? CustomProductFileID { get; set; }
+		public int ProductItemID { get; set; }
 		public int Quantity { get; set; }
 		public double Price { get; set; }
-
-		public string? FileUrl { get; set; }
-		public string? CustomProductImageUrl { get; set; }
-		public string? CustomProductName { get; set; }
+		public string? CustomProductFileID { get; set; }
 	}
 }

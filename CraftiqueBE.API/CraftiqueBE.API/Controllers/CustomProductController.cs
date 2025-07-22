@@ -20,7 +20,7 @@ namespace CraftiqueBE.API.Controllers
 		// ➤ Admin thêm custom product
 		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}")]
 		[HttpPost("admin")]
-		public async Task<IActionResult> AddCustomProduct([FromBody] CustomProductUploadModel model)
+		public async Task<IActionResult> AddCustomProduct([FromForm] CustomProductUploadModel model)
 		{
 			var result = await _customProductService.AddCustomProductWithImageAsync(model);
 			return Ok(result);
