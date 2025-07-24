@@ -26,8 +26,6 @@ namespace CraftiqueBE.API.Controllers
 			return Ok(result);
 		}
 
-		// ➤ Admin, Staff xem tất cả custom products
-		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}, {RolesHelper.Customer}")]
 		[HttpGet]
 		public async Task<IActionResult> GetAllCustomProducts()
 		{
@@ -45,7 +43,6 @@ namespace CraftiqueBE.API.Controllers
 			return Ok(new { message = "Đã xoá thành công." });
 		}
 
-		[Authorize(Roles = $"{RolesHelper.Admin}, {RolesHelper.Staff}, {RolesHelper.Customer}")]
 		[HttpGet("{id}")]
 		public async Task<IActionResult> GetCustomProductById(int id)
 		{
