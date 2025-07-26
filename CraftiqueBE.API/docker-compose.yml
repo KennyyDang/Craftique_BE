@@ -11,7 +11,7 @@
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStringsDefaultConnection=Server=sqlserver-container-craftique,1433;Database=CraftiqueDB;User Id=sa;Password=YourStrongP@ssword;TrustServerCertificate=True;
       # JWT Settings
-      - JWTAccessTokenExpiredByMinutes=15
+      - JWTAccessTokenExpiredByMinutes=120
       - JWTRefreshTokenExpiredByHours=3
       - JWTAudience=CraftiqueClient
       - JWTIssuer=CraftiqueAPI
